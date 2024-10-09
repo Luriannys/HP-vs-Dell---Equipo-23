@@ -42,15 +42,20 @@ public class Project_Manager extends Thread{
         while (horas <24){
             while (horas <17){
             System.out.println("El "+this.trabajo+" esta trabajando");    
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             System.out.println("El "+this.trabajo+" esta viendo anime");
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             this.pago=this.pago+this.salario;
             horas++;
+            System.out.println("Pasaron "+this.horas+" hora(s)");
             
             }
             System.out.println("El "+this.trabajo+" esta trabajando");
+            Thread.sleep(2000);
+            horas++;
+            System.out.println("Pasaron "+this.horas+" hora(s)");
         }
+        
         } catch (InterruptedException ex) {
                     Logger.getLogger(Project_Manager.class.getName()).log(Level.SEVERE, null, ex);
                 }
