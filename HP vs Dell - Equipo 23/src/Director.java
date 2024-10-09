@@ -10,6 +10,7 @@
 
 
 
+import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,14 +22,29 @@ public class Director extends Thread {
     String trabajo= "Director" ;
     int salario=60;
     int pago;
+    int horas;
+    Semaphore semaphore;
+    int dias;
+
+    public Director(int horas, Semaphore semaphore, int dias, int deadline) {
+        this.horas = horas;
+        this.semaphore = semaphore;
+        this.dias = dias;
+    }
     
     
-    public void TrabajoDir(int horas,int dias,int deadline ){
-        System.out.println("El "+ this.trabajo +" comienza a trabajar ");
+    
+    @Override
+    public void run(){
+       this.TrabajoDir();
+    }
+    public void TrabajoDir( ){
+        
         try {
-             while (horas <24){
         System.out.println("El "+ this.trabajo +" comienza a trabajar ");
-        //if (deadline==dias){
+          while (horas <24){
+            System.out.println("El "+ this.trabajo +" comienza a trabajar ");
+            //if (deadline==dias){
             //enviar computadoras 24 horas
             //almacen de compus =0
             System.out.println("El "+trabajo+" esta enviando las computadoras");

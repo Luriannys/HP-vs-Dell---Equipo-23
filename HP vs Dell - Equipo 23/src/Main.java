@@ -24,54 +24,16 @@ public class Main extends Thread{
         this.semaphore=semaforo;
         this.id=id;
         
-    }
-    @Override
-    public void run(){
-        try {
-            
-            System.out.println("PM esta llegando");
-            System.out.println("Director esta llegando");
-            semaphore.acquire();
-            while (horas<24){
-                while (horas<17){
-                System.out.println("PM esta trabajando");
-
-                Thread.sleep(3000);
-                System.out.println("PM esta viendo anime");
-                Thread.sleep(1000);
-                horas++;
-                }
-                horas++;
-
-                if (horas >23){
-                    dias++;
-                    horas=0;
-                   //los que tardan 1 dia se suman y ya 
-                   if (dias%2 ==0){
-                       //se suman cada dos dias 
-                   }
-                   if (dias%3 ==0){
-                       //se suman cada tres dias 
-                   }
-                   // si las piezas necesarias para la computadora estan listas computadora = true y hilo emsabladores se activa
-
-
-                }
-            }
-            
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
+    } 
    public static void main(String[] args) {
         Semaphore semaforo= new Semaphore(3);
        
-        Thread t =new Thread(new Main(semaforo,2));
-        Thread t1 =new Thread(new Main(semaforo,1));
+        Thread t =new Thread(new Project_Manager(0,semaforo,0));
+        Thread t1 =new Thread(new Director(0,semaforo,0,30));
         //multithread
         
         t.start();
+        t1.start();
    
         System.out.println("Fuera del HIloooo");
         

@@ -5,6 +5,7 @@
  */
 
 
+import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,13 +13,30 @@ import java.util.logging.Logger;
  *
  * @author rgabr
  */
-public class Proyect_Manager extends Thread{
+public class Project_Manager extends Thread{
     String trabajo= "Project Manager" ;
     int salario=40;
     int pago;
-    int faltas;
+    int faltas=0;
+    int horas;
+    Semaphore semaphore;
+    public int dias;
+
+    public Project_Manager(int horas, Semaphore semaphore, int dias) {
+        
+        this.horas = horas;
+        this.semaphore = semaphore;
+        this.dias = dias;
+    }
+
     
-    public void TrabajoPM(int horas,int dias ){
+    
+    @Override
+    public void run(){
+       this.TrabajoPM();
+    }
+    
+    public void TrabajoPM(){
         try {
         System.out.println("El "+ this.trabajo +" comienza a trabajar ");
         while (horas <24){
@@ -34,7 +52,7 @@ public class Proyect_Manager extends Thread{
             System.out.println("El "+this.trabajo+" esta trabajando");
         }
         } catch (InterruptedException ex) {
-                    Logger.getLogger(Proyect_Manager.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Project_Manager.class.getName()).log(Level.SEVERE, null, ex);
                 }
     }
 

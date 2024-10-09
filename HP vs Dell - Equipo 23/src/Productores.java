@@ -15,6 +15,7 @@ public class Productores extends Trabajadores {
     public Productores(String tipo_productor, float sueldo, int tiempo_produccion, int almacen) {
         super(sueldo, tiempo_produccion, almacen);
         this.tipo_productor = tipo_productor;
+        //switch
         if (this.tipo_productor == "Placa base"){
             this.sueldo= 20;
             this.tiempo_produccion=3;
@@ -39,9 +40,39 @@ public class Productores extends Trabajadores {
             this.sueldo= 50;
             this.tiempo_produccion=2;
             this.almacen=999999;
+            
         }
+        /*if (horas >23){
+                    dias++;
+                    horas=0;
+                   //los que tardan 1 dia se suman y ya 
+                   if (dias%2 ==0){
+                       //se suman cada dos dias 
+                   }
+                   if (dias%3 ==0){
+                       //se suman cada tres dias 
+                   }
+                   // si las piezas necesarias para la computadora estan listas computadora = true y hilo emsabladores se activa
+
+
+                }*/
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public String getTipo_productor() {
         return tipo_productor;
     }

@@ -13,6 +13,8 @@ public class Trabajadores {
     float sueldo;
     int tiempo_produccion;
     int almacen;
+    int pago;
+
 
     public Trabajadores(float sueldo, int tiempo_produccion, int almacen) {
         this.sueldo = sueldo;
