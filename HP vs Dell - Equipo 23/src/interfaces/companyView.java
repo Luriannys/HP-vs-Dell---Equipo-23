@@ -5,13 +5,16 @@ package interfaces;
  * @author Luriannys Junco
  */
 public class CompanyView extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form principal
      */
     public CompanyView() {
-        initComponents();
+        
+        initComponents();              
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -22,40 +25,40 @@ public class CompanyView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        companyStorage = new javax.swing.JPanel();
+        companyNumbers = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        pmActions = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        faltasNumber = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
+        pmDescuentos = new javax.swing.JLabel();
+        directorActions = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        dayDeadline = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         companyWorkers = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         minusPlaca = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        placaNumber = new javax.swing.JLabel();
         plusPlaca = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         minusCPU = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
+        cpuNumber = new javax.swing.JLabel();
         plusCPU = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         minusRAM = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
+        ramNumber = new javax.swing.JLabel();
         plusRAM = new javax.swing.JButton();
         minusFuente = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
+        fuenteNumber = new javax.swing.JLabel();
         plusFuente = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         minusTarjeta = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
+        tarjetaNumber = new javax.swing.JLabel();
         plusTarjeta = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         minusEnsambladores = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
+        ensambladoresNumber = new javax.swing.JLabel();
         plusEnsambladores = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         companyStorage1 = new javax.swing.JPanel();
@@ -71,54 +74,51 @@ public class CompanyView extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         returnPrincipalView = new javax.swing.JButton();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
+        utility = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
+        costs = new javax.swing.JLabel();
+        profits = new javax.swing.JLabel();
+        companyName = new javax.swing.JLabel();
         mainBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        companyStorage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        companyNumbers.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setText("Project Manager");
-        companyStorage.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        companyNumbers.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jLabel7.setText("0/0");
-        companyStorage.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+        pmActions.setText("0/0");
+        companyNumbers.add(pmActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         jLabel8.setText("Faltas");
-        companyStorage.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 55, -1, -1));
+        companyNumbers.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        jLabel19.setText("0/0");
-        companyStorage.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 55, -1, -1));
+        faltasNumber.setText("0/0");
+        companyNumbers.add(faltasNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
 
         jLabel9.setText("Director");
-        companyStorage.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 125, -1, -1));
+        companyNumbers.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
-        jLabel20.setText("0/0");
-        companyStorage.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
+        pmDescuentos.setText("0/0");
+        companyNumbers.add(pmDescuentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
 
-        jLabel22.setText("0/0");
-        companyStorage.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 125, -1, -1));
+        directorActions.setText("0/0");
+        companyNumbers.add(directorActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
 
         jLabel25.setText("DÍAS DE ENTREGA");
-        companyStorage.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 195, -1, -1));
+        companyNumbers.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
-        jLabel26.setText("0/0");
-        companyStorage.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 195, -1, -1));
+        dayDeadline.setText("0/0");
+        companyNumbers.add(dayDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
 
         jLabel13.setText("Dinero descontado");
-        companyStorage.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        companyNumbers.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        getContentPane().add(companyStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 170, 230));
+        getContentPane().add(companyNumbers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 220, 230));
 
         companyWorkers.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -139,8 +139,8 @@ public class CompanyView extends javax.swing.JFrame {
         companyWorkers.add(minusPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 15, -1, -1));
         minusPlaca.getAccessibleContext().setAccessibleDescription("");
 
-        jLabel4.setText("0");
-        companyWorkers.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+        placaNumber.setText("0");
+        companyWorkers.add(placaNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         plusPlaca.setBackground(new java.awt.Color(242, 242, 242));
         plusPlaca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
@@ -171,8 +171,8 @@ public class CompanyView extends javax.swing.JFrame {
         });
         companyWorkers.add(minusCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
 
-        jLabel11.setText("0");
-        companyWorkers.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 55, -1, -1));
+        cpuNumber.setText("0");
+        companyWorkers.add(cpuNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 55, -1, -1));
 
         plusCPU.setBackground(new java.awt.Color(242, 242, 242));
         plusCPU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
@@ -203,8 +203,8 @@ public class CompanyView extends javax.swing.JFrame {
         });
         companyWorkers.add(minusRAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 85, -1, -1));
 
-        jLabel12.setText("0");
-        companyWorkers.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+        ramNumber.setText("0");
+        companyWorkers.add(ramNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         plusRAM.setBackground(new java.awt.Color(242, 242, 242));
         plusRAM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
@@ -232,8 +232,8 @@ public class CompanyView extends javax.swing.JFrame {
         });
         companyWorkers.add(minusFuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
 
-        jLabel14.setText("0");
-        companyWorkers.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 125, -1, -1));
+        fuenteNumber.setText("0");
+        companyWorkers.add(fuenteNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 125, -1, -1));
 
         plusFuente.setBackground(new java.awt.Color(242, 242, 242));
         plusFuente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
@@ -264,8 +264,8 @@ public class CompanyView extends javax.swing.JFrame {
         });
         companyWorkers.add(minusTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 155, -1, -1));
 
-        jLabel16.setText("0");
-        companyWorkers.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
+        tarjetaNumber.setText("0");
+        companyWorkers.add(tarjetaNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
 
         plusTarjeta.setBackground(new java.awt.Color(242, 242, 242));
         plusTarjeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
@@ -296,8 +296,8 @@ public class CompanyView extends javax.swing.JFrame {
         });
         companyWorkers.add(minusEnsambladores, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
 
-        jLabel18.setText("0");
-        companyWorkers.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 195, -1, -1));
+        ensambladoresNumber.setText("0");
+        companyWorkers.add(ensambladoresNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 195, -1, -1));
 
         plusEnsambladores.setBackground(new java.awt.Color(242, 242, 242));
         plusEnsambladores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
@@ -323,33 +323,33 @@ public class CompanyView extends javax.swing.JFrame {
         companyStorage1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         placaStorage.setText("0/0");
-        companyStorage1.add(placaStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+        companyStorage1.add(placaStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
         jLabel30.setText("CPU");
         companyStorage1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         cpuStorage.setText("0/0");
-        companyStorage1.add(cpuStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
+        companyStorage1.add(cpuStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
 
         jLabel32.setText("Fuente de poder");
         companyStorage1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         ramStorage.setText("0/0");
-        companyStorage1.add(ramStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
+        companyStorage1.add(ramStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
 
         fuenteStorage.setText("0/0");
-        companyStorage1.add(fuenteStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+        companyStorage1.add(fuenteStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
 
         jLabel35.setText("Tarjeta gráfica");
         companyStorage1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         tarjetaStorage.setText("0/0");
-        companyStorage1.add(tarjetaStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+        companyStorage1.add(tarjetaStorage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
 
         jLabel39.setText("RAM");
         companyStorage1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        getContentPane().add(companyStorage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 170, 230));
+        getContentPane().add(companyStorage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 140, 230));
 
         mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -362,44 +362,32 @@ public class CompanyView extends javax.swing.JFrame {
         });
         mainPanel.add(returnPrincipalView, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
 
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("$");
-        mainPanel.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
-
-        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel42.setText("UTILIDAD");
-        mainPanel.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
+        utility.setForeground(new java.awt.Color(255, 255, 255));
+        utility.setText("UTILIDAD: $ 0");
+        mainPanel.add(utility, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("ALMACÉN");
-        mainPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
-
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("$");
-        mainPanel.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
+        mainPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("TRABAJADORES");
         mainPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
 
-        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel40.setText("COSTOS");
-        mainPanel.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
+        costs.setForeground(new java.awt.Color(255, 255, 255));
+        costs.setText("COSTOS: $ 0");
+        mainPanel.add(costs, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
 
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("GANANCIAS");
-        mainPanel.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        profits.setForeground(new java.awt.Color(255, 255, 255));
+        profits.setText("GANANCIAS: $ 0");
+        mainPanel.add(profits, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel27.setText("companyName");
-        mainPanel.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel43.setText("$");
-        mainPanel.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
+        companyName.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        companyName.setForeground(new java.awt.Color(255, 255, 255));
+        companyName.setText("companyName");
+        mainPanel.add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         mainBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nasa-Q1p7bh3SHj8-unsplash.jpg"))); // NOI18N
         mainBackground.setText("jLabel1");
@@ -412,53 +400,90 @@ public class CompanyView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
     private void plusPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusPlacaActionPerformed
         // TODO add your handling code here:
+        int placas = Integer.parseInt(placaNumber.getText()) + 1;
+            placaNumber.setText(String.valueOf(placas));
     }//GEN-LAST:event_plusPlacaActionPerformed
 
     private void minusPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusPlacaActionPerformed
         // TODO add your handling code here:
+        if (Integer.parseInt(placaNumber.getText()) > 1){
+            int placas = Integer.parseInt(placaNumber.getText()) - 1;
+            placaNumber.setText(String.valueOf(placas));
+        }
     }//GEN-LAST:event_minusPlacaActionPerformed
 
     private void minusCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusCPUActionPerformed
         // TODO add your handling code here:
+        if (Integer.parseInt(cpuNumber.getText()) > 1){
+            int cpu = Integer.parseInt(cpuNumber.getText()) - 1;
+            cpuNumber.setText(String.valueOf(cpu));
+        }
     }//GEN-LAST:event_minusCPUActionPerformed
 
     private void plusCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusCPUActionPerformed
         // TODO add your handling code here:
+        int cpu = Integer.parseInt(cpuNumber.getText()) + 1;
+            cpuNumber.setText(String.valueOf(cpu));
     }//GEN-LAST:event_plusCPUActionPerformed
 
     private void minusRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusRAMActionPerformed
         // TODO add your handling code here:
+        if (Integer.parseInt(ramNumber.getText()) > 1){
+            int ram = Integer.parseInt(ramNumber.getText()) - 1;
+            ramNumber.setText(String.valueOf(ram));
+        }
     }//GEN-LAST:event_minusRAMActionPerformed
 
     private void plusRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusRAMActionPerformed
         // TODO add your handling code here:
+        int ram = Integer.parseInt(ramNumber.getText()) + 1;
+            ramNumber.setText(String.valueOf(ram));
     }//GEN-LAST:event_plusRAMActionPerformed
 
     private void minusFuenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusFuenteActionPerformed
         // TODO add your handling code here:
+        if (Integer.parseInt(fuenteNumber.getText()) > 1){
+            int fuentes = Integer.parseInt(fuenteNumber.getText()) - 1;
+            fuenteNumber.setText(String.valueOf(fuentes));
+        }
     }//GEN-LAST:event_minusFuenteActionPerformed
 
     private void plusFuenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusFuenteActionPerformed
         // TODO add your handling code here:
+        int fuentes = Integer.parseInt(fuenteNumber.getText()) + 1;
+            fuenteNumber.setText(String.valueOf(fuentes));
     }//GEN-LAST:event_plusFuenteActionPerformed
 
     private void minusTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusTarjetaActionPerformed
         // TODO add your handling code here:
+        if (Integer.parseInt(tarjetaNumber.getText()) > 1){
+            int tarjetas = Integer.parseInt(tarjetaNumber.getText()) - 1;
+            tarjetaNumber.setText(String.valueOf(tarjetas));
+        }
     }//GEN-LAST:event_minusTarjetaActionPerformed
 
     private void plusTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusTarjetaActionPerformed
         // TODO add your handling code here:
+        int tarjetas = Integer.parseInt(tarjetaNumber.getText()) + 1;
+        tarjetaNumber.setText(String.valueOf(tarjetas));
     }//GEN-LAST:event_plusTarjetaActionPerformed
 
     private void minusEnsambladoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusEnsambladoresActionPerformed
         // TODO add your handling code here:
+        if (Integer.parseInt(ensambladoresNumber.getText()) > 1){
+            int ensambladores = Integer.parseInt(ensambladoresNumber.getText()) - 1;
+            ensambladoresNumber.setText(String.valueOf(ensambladores));
+        }
     }//GEN-LAST:event_minusEnsambladoresActionPerformed
 
     private void plusEnsambladoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusEnsambladoresActionPerformed
         // TODO add your handling code here:
+        int ensambladores = Integer.parseInt(ensambladoresNumber.getText()) + 1;
+        ensambladoresNumber.setText(String.valueOf(ensambladores));
     }//GEN-LAST:event_plusEnsambladoresActionPerformed
 
     private void returnPrincipalViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnPrincipalViewActionPerformed
@@ -520,45 +545,35 @@ public class CompanyView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel companyStorage;
+    private javax.swing.JLabel companyName;
+    private javax.swing.JPanel companyNumbers;
     private javax.swing.JPanel companyStorage1;
     private javax.swing.JPanel companyWorkers;
+    private javax.swing.JLabel costs;
+    private javax.swing.JLabel cpuNumber;
     private javax.swing.JLabel cpuStorage;
+    private javax.swing.JLabel dayDeadline;
+    private javax.swing.JLabel directorActions;
+    private javax.swing.JLabel ensambladoresNumber;
+    private javax.swing.JLabel faltasNumber;
+    private javax.swing.JLabel fuenteNumber;
     private javax.swing.JLabel fuenteStorage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel mainBackground;
@@ -569,6 +584,7 @@ public class CompanyView extends javax.swing.JFrame {
     private javax.swing.JButton minusPlaca;
     private javax.swing.JButton minusRAM;
     private javax.swing.JButton minusTarjeta;
+    private javax.swing.JLabel placaNumber;
     private javax.swing.JLabel placaStorage;
     private javax.swing.JButton plusCPU;
     private javax.swing.JButton plusEnsambladores;
@@ -576,8 +592,14 @@ public class CompanyView extends javax.swing.JFrame {
     private javax.swing.JButton plusPlaca;
     private javax.swing.JButton plusRAM;
     private javax.swing.JButton plusTarjeta;
+    private javax.swing.JLabel pmActions;
+    private javax.swing.JLabel pmDescuentos;
+    private javax.swing.JLabel profits;
+    private javax.swing.JLabel ramNumber;
     private javax.swing.JLabel ramStorage;
     private javax.swing.JButton returnPrincipalView;
+    private javax.swing.JLabel tarjetaNumber;
     private javax.swing.JLabel tarjetaStorage;
+    private javax.swing.JLabel utility;
     // End of variables declaration//GEN-END:variables
 }
