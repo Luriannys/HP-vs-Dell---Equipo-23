@@ -42,20 +42,7 @@ public class Productores extends Trabajadores {
             this.almacen=999999;
             
         }
-        /*if (horas >23){
-                    dias++;
-                    horas=0;
-                   //los que tardan 1 dia se suman y ya 
-                   if (dias%2 ==0){
-                       //se suman cada dos dias 
-                   }
-                   if (dias%3 ==0){
-                       //se suman cada tres dias 
-                   }
-                   // si las piezas necesarias para la computadora estan listas computadora = true y hilo emsabladores se activa
-
-
-                }*/
+        
     }
 
     

@@ -45,22 +45,13 @@ public class Director extends Thread {
        this.TrabajoDir();
     }
     public void TrabajoDir( ){
-        
         try {
+        while (dias!=deadline){
+        
         System.out.println("El "+ this.trabajo +" comienza a trabajar ");
             System.out.println("El Director revisara al Project Manager a la hora "+revision);
-          
-        if (deadline==dias){
-            //enviar computadoras 24 horas
-            //almacen de compus =0
-            System.out.println("El "+trabajo+" esta enviando las computadoras");
-            Thread.sleep(24000);
-            System.out.println("El "+trabajo+" termino de enviar las computadoras");
-            //compania.ganancias=compania.ganancias+
-                   
-        }else{
-                
-            }
+              
+           
            if (this.revision <16){
                //pm falta +1 y pago-100 
                Thread.sleep(revision*2000);
@@ -72,12 +63,23 @@ public class Director extends Thread {
                Thread.sleep(48000);
                System.out.println("El Director no atrapo al Project Manager");
                System.out.println("Faltas "+this.pm.getFaltas());
-            
+            dias++;
            }
-           
+        }
+           if (deadline==dias){
+            //enviar computadoras 24 horas
+            //almacen de compus =0
+            System.out.println("El "+trabajo+" esta enviando las computadoras");
+            Thread.sleep(24000);
+            System.out.println("El "+trabajo+" termino de enviar las computadoras");
+            //compania.ganancias=compania.ganancias+
+           }
+        
         } catch (InterruptedException ex) {
                     Logger.getLogger(Director.class.getName()).log(Level.SEVERE, null, ex);
                 }
+        
+        
     }
 
     public String getTrabajo() {

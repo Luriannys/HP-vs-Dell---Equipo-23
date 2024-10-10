@@ -12,6 +12,9 @@ public class Compania {
     float ganancias;
     float costos;
     float utilidad;
+    String nombre;
+    
+    
 
     public Compania(int deadline) {
         this.deadline = deadline;
