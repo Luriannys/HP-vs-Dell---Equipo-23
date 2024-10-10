@@ -1,15 +1,17 @@
 package interfaces;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Luriannys Junco
  */
-public class principal extends javax.swing.JFrame {
+public class PrincipalView extends javax.swing.JFrame {
 
     /**
      * Creates new form principal
      */
-    public principal() {
+    public PrincipalView() {
         initComponents();
     }
 
@@ -22,7 +24,9 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
+        exit = new javax.swing.JButton();
+        bothButton = new javax.swing.JButton();
         dellButton = new javax.swing.JButton();
         settingsButton = new javax.swing.JButton();
         hpButton = new javax.swing.JButton();
@@ -30,14 +34,31 @@ public class principal extends javax.swing.JFrame {
         mainBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(640, 425));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 111, -1, -1));
+        mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        dellButton.setBackground(new java.awt.Color(102, 102, 102));
+        exit.setBackground(java.awt.Color.lightGray);
+        exit.setText("Salir");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        mainPanel.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
+
+        bothButton.setBackground(new java.awt.Color(242, 242, 242));
+        bothButton.setText("HP vs DELL");
+        bothButton.setBorderPainted(false);
+        bothButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bothButtonActionPerformed(evt);
+            }
+        });
+        mainPanel.add(bothButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 140, 50));
+
+        dellButton.setBackground(new java.awt.Color(242, 242, 242));
         dellButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dell_logo_icon_167699 (2).png"))); // NOI18N
         dellButton.setText("DELL");
         dellButton.setBorderPainted(false);
@@ -46,13 +67,19 @@ public class principal extends javax.swing.JFrame {
                 dellButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(dellButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 140, 50));
+        mainPanel.add(dellButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 140, 50));
 
-        settingsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settingstoolswheel-115840_115789.png"))); // NOI18N
+        settingsButton.setBackground(java.awt.Color.lightGray);
+        settingsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-ajustes-30.png"))); // NOI18N
         settingsButton.setBorderPainted(false);
-        getContentPane().add(settingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 340, -1, -1));
+        settingsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settingsButtonActionPerformed(evt);
+            }
+        });
+        mainPanel.add(settingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        hpButton.setBackground(new java.awt.Color(102, 102, 102));
+        hpButton.setBackground(new java.awt.Color(242, 242, 242));
         hpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hplogo_94383 (6).png"))); // NOI18N
         hpButton.setText("HP");
         hpButton.setBorderPainted(false);
@@ -61,31 +88,59 @@ public class principal extends javax.swing.JFrame {
                 hpButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(hpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 140, 50));
+        mainPanel.add(hpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 140, 50));
 
         mainTitle.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         mainTitle.setForeground(new java.awt.Color(255, 255, 255));
         mainTitle.setText("HP VS DELL");
-        getContentPane().add(mainTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, -1, -1));
+        mainPanel.add(mainTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, -1, -1));
 
         mainBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nasa-Q1p7bh3SHj8-unsplash.jpg"))); // NOI18N
         mainBackground.setText("jLabel1");
         mainBackground.setMaximumSize(new java.awt.Dimension(680, 425));
         mainBackground.setMinimumSize(new java.awt.Dimension(680, 425));
         mainBackground.setPreferredSize(new java.awt.Dimension(680, 425));
-        getContentPane().add(mainBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, -1));
+        mainPanel.add(mainBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, -1));
+
+        getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void hpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hpButtonActionPerformed
         // TODO add your handling code here:
-
+        CompanyView companyHP = new CompanyView();
+        companyHP.setVisible(true);
+        dispose();
     }//GEN-LAST:event_hpButtonActionPerformed
 
     private void dellButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dellButtonActionPerformed
         // TODO add your handling code here:
+        CompanyView companyDELL = new CompanyView();
+        companyDELL.setVisible(true);
+        dispose();
     }//GEN-LAST:event_dellButtonActionPerformed
+
+    private void settingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsButtonActionPerformed
+        // TODO add your handling code here:
+        SettingsView settingsView = new SettingsView();
+        settingsView.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_settingsButtonActionPerformed
+
+    private void bothButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bothButtonActionPerformed
+        // TODO add your handling code here:
+        CompanyView companyHP = new CompanyView();
+        companyHP.setVisible(true);
+        CompanyView companyDELL = new CompanyView();
+        companyDELL.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_bothButtonActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,29 +159,32 @@ public class principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new principal().setVisible(true);
+                new PrincipalView().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bothButton;
     private javax.swing.JButton dellButton;
+    private javax.swing.JButton exit;
     private javax.swing.JButton hpButton;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel mainBackground;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel mainTitle;
     private javax.swing.JButton settingsButton;
     // End of variables declaration//GEN-END:variables
