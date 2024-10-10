@@ -1,4 +1,5 @@
 
+import interfaces.PrincipalView;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +28,14 @@ public class Main extends Thread{
         
     } 
    public static void main(String[] args) {
+       
+       //Iniciar interfaz
+       
+       PrincipalView principalView = new PrincipalView();
+       principalView.setVisible(true);
+       
+       
+       
         //Compania hp= new Compania();
         Semaphore semaforo= new Semaphore(3);
         Project_Manager pm =new Project_Manager(0,semaforo,0);
