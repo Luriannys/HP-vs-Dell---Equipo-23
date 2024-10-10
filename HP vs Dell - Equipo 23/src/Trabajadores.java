@@ -84,7 +84,7 @@ public void produccion(){
                 pago=pago+40+34+20+26+16+50;
                 System.out.println("PCs "+almacenPC);
                 System.out.println("PCs graficas "+almacenPCG);
-                if (almacenPlaca>0 &&almacenCPU>0&&almacenRAM>1&&this.almacen_Fpoder>3){
+                if (almacenPlaca>0 &&almacenCPU>0&&almacenRAM>1&&almacen_Fpoder>3){
                     
                     this.almacenPlaca=this.almacenPlaca-1;
                     this.almacenCPU=this.almacenCPU-1;

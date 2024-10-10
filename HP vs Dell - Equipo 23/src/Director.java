@@ -38,6 +38,7 @@ public class Director extends Thread {
         this.dias = dias;
         this.deadline=deadline;
         this.pm=pm;
+        this.tiempo=tiempo;
         
     }
     
@@ -50,21 +51,22 @@ public class Director extends Thread {
     public void TrabajoDir( ){
         try {
         while (dias!=deadline){
-        
-        System.out.println("El "+ this.trabajo +" comienza a trabajar ");
+            revision = (int)(Math.random()*24+1);
+            System.out.println("El "+ this.trabajo +" comienza a trabajar ");
             System.out.println("El Director revisara al Project Manager a la hora "+revision);
+            
               
            
            if (this.revision <16){
                //pm falta +1 y pago-100 
-               Thread.sleep(Duration.ofSeconds(tiempo/24));
+               Thread.sleep(Duration.ofSeconds(tiempo));
                System.out.println("EL Director atrapo al Project Manager viendo anime");
                faltas = faltas+1;
                System.out.println("Faltas "+faltas);//no sirve :(
                dias++;
         
              }else{
-            Thread.sleep(Duration.ofSeconds(tiempo/24));
+            Thread.sleep(Duration.ofSeconds(tiempo));
             System.out.println("El Director no atrapo al Project Manager");
                System.out.println("Faltas "+faltas);
                dias++;
