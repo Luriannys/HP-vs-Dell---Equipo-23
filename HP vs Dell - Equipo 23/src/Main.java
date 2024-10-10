@@ -36,12 +36,13 @@ public class Main extends Thread{
        principalView.setVisible(true);
        
        
-       int tiempo=5;
+       int tiempo=48;
+       int deadline=30;
         //Compania hp= new Compania();
         Semaphore semaforo= new Semaphore(3);
-        Project_Manager pm =new Project_Manager(0,semaforo,0,2,tiempo);
+        Project_Manager pm =new Project_Manager(0,semaforo,0,deadline,tiempo);
         Thread t =new Thread(pm);
-        Thread t1 =new Thread(new Director(0,semaforo,0,2,pm,tiempo));
+        Thread t1 =new Thread(new Director(0,semaforo,0,deadline,pm,tiempo));
         Thread t2=new Thread(new Trabajadores(tiempo,30));
         Thread t3=new Thread();
         //multithread

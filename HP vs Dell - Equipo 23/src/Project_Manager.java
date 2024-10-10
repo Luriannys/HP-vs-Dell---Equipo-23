@@ -45,17 +45,17 @@ public class Project_Manager extends Thread{
         System.out.println("El "+ this.trabajo +" comienza a trabajar ");
         while (dias!=deadline){
             while (horas <17){
-            System.out.println("El "+this.trabajo+" esta trabajando");    
-            Thread.sleep(tiempo/48*1000);
+            System.out.println("El "+this.trabajo+" esta trabajando");  
+            Thread.sleep(Duration.ofSeconds(tiempo/48));
             System.out.println("El "+this.trabajo+" esta viendo anime");
-            Thread.sleep(tiempo/48*1000);
+            Thread.sleep(Duration.ofSeconds(tiempo/48));
             this.pago=this.pago+this.salario;
             horas++;
             System.out.println("Pasaron "+this.horas+" hora(s)");
             
             }
             System.out.println("El "+this.trabajo+" esta trabajando");
-            Thread.sleep(tiempo/24*1000);
+            Thread.sleep(Duration.ofSeconds(tiempo/24));
             horas++;
             System.out.println("Pasaron "+this.horas+" hora(s)");
             if (horas==24){
