@@ -10,6 +10,7 @@
 
 
 
+import java.time.Duration;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,8 +29,10 @@ public class Director extends Thread {
     int deadline;
     int revision = (int)(Math.random()*24+1);
     Project_Manager pm;
+    int faltas;
+    private int tiempo;
 
-    public Director(int horas, Semaphore semaphore, int dias, int deadline, Project_Manager pm) {
+    public Director(int horas, Semaphore semaphore, int dias, int deadline, Project_Manager pm,int tiempo) {
         this.horas = horas;
         this.semaphore = semaphore;
         this.dias = dias;
@@ -54,16 +57,17 @@ public class Director extends Thread {
            
            if (this.revision <16){
                //pm falta +1 y pago-100 
-               Thread.sleep(revision*2000);
+               Thread.sleep(Duration.ofSeconds(tiempo/24));
                System.out.println("EL Director atrapo al Project Manager viendo anime");
-               int faltas = this.pm.getFaltas()+1;
-               System.out.println("Faltas "+this.pm.getFaltas());//no sirve :(
+               faltas = faltas+1;
+               System.out.println("Faltas "+faltas);//no sirve :(
+               dias++;
         
              }else{
-               Thread.sleep(48000);
-               System.out.println("El Director no atrapo al Project Manager");
-               System.out.println("Faltas "+this.pm.getFaltas());
-            dias++;
+            Thread.sleep(Duration.ofSeconds(tiempo/24));
+            System.out.println("El Director no atrapo al Project Manager");
+               System.out.println("Faltas "+faltas);
+               dias++;
            }
         }
            if (deadline==dias){

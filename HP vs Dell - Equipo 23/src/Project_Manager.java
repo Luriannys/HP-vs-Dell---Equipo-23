@@ -5,6 +5,7 @@
  */
 
 
+import java.time.Duration;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,12 +22,15 @@ public class Project_Manager extends Thread{
     int horas;
     Semaphore semaphore;
     public int dias;
+    int deadline;
+    int tiempo;
 
-    public Project_Manager(int horas, Semaphore semaphore, int dias) {
-        
+    public Project_Manager(int horas, Semaphore semaphore, int dias, int deadline,int tiempo) {
+        this.deadline=deadline;
         this.horas = horas;
         this.semaphore = semaphore;
         this.dias = dias;
+        this.tiempo=tiempo;
     }
 
     
@@ -39,21 +43,26 @@ public class Project_Manager extends Thread{
     public void TrabajoPM(){
         try {
         System.out.println("El "+ this.trabajo +" comienza a trabajar ");
-        while (horas <24){
+        while (dias!=deadline){
             while (horas <17){
             System.out.println("El "+this.trabajo+" esta trabajando");    
-            Thread.sleep(1000);
+            Thread.sleep(tiempo/48*1000);
             System.out.println("El "+this.trabajo+" esta viendo anime");
-            Thread.sleep(1000);
+            Thread.sleep(tiempo/48*1000);
             this.pago=this.pago+this.salario;
             horas++;
             System.out.println("Pasaron "+this.horas+" hora(s)");
             
             }
             System.out.println("El "+this.trabajo+" esta trabajando");
-            Thread.sleep(2000);
+            Thread.sleep(tiempo/24*1000);
             horas++;
             System.out.println("Pasaron "+this.horas+" hora(s)");
+            if (horas==24){
+                horas=0;
+            }
+            dias++;
+        
         }
         
         } catch (InterruptedException ex) {
