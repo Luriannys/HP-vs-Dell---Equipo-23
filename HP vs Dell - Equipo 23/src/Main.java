@@ -19,6 +19,7 @@ public class Main extends Thread{
     public int horas;
     public int dias;
     public boolean computadora;
+    public int deadline=30;
 
     public Main(Semaphore semaforo,int id) {
         this.semaphore=semaforo;
@@ -26,10 +27,11 @@ public class Main extends Thread{
         
     } 
    public static void main(String[] args) {
+        //Compania hp= new Compania();
         Semaphore semaforo= new Semaphore(3);
-       
-        Thread t =new Thread(new Project_Manager(0,semaforo,0));
-        Thread t1 =new Thread(new Director(0,semaforo,0,30));
+        Project_Manager pm =new Project_Manager(0,semaforo,0);
+        Thread t =new Thread(pm);
+        Thread t1 =new Thread(new Director(0,semaforo,0,30,pm));
         //multithread
         
         t.start();

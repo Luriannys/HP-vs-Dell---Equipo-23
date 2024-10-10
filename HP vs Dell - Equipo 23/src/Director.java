@@ -27,12 +27,14 @@ public class Director extends Thread {
     int dias;
     int deadline;
     int revision = (int)(Math.random()*24+1);
+    Project_Manager pm;
 
-    public Director(int horas, Semaphore semaphore, int dias, int deadline) {
+    public Director(int horas, Semaphore semaphore, int dias, int deadline, Project_Manager pm) {
         this.horas = horas;
         this.semaphore = semaphore;
         this.dias = dias;
         this.deadline=deadline;
+        this.pm=pm;
         
     }
     
@@ -46,9 +48,9 @@ public class Director extends Thread {
         
         try {
         System.out.println("El "+ this.trabajo +" comienza a trabajar ");
-            System.out.println("El director revisara al Project Manager a la hora "+revision);
+            System.out.println("El Director revisara al Project Manager a la hora "+revision);
           
-            if (deadline==dias){
+        if (deadline==dias){
             //enviar computadoras 24 horas
             //almacen de compus =0
             System.out.println("El "+trabajo+" esta enviando las computadoras");
@@ -63,12 +65,16 @@ public class Director extends Thread {
                //pm falta +1 y pago-100 
                Thread.sleep(revision*2000);
                System.out.println("EL Director atrapo al Project Manager viendo anime");
-               
+               int faltas = this.pm.getFaltas()+1;
+               System.out.println("Faltas "+this.pm.getFaltas());//no sirve :(
         
              }else{
                Thread.sleep(48000);
                System.out.println("El Director no atrapo al Project Manager");
+               System.out.println("Faltas "+this.pm.getFaltas());
+            
            }
+           
         } catch (InterruptedException ex) {
                     Logger.getLogger(Director.class.getName()).log(Level.SEVERE, null, ex);
                 }
