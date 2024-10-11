@@ -24,7 +24,6 @@ public class CompanyViewDELL extends javax.swing.JFrame {
         CompanyViewHP companyHP = new CompanyViewHP();
         Compania hp = new Compania("HP", 16, 3, 3, 2);
         companyHP.setCompany(hp);
-        System.out.println(companyHP.getCompany().getNombre()); // AQUI FUNCIONAAA
         companyHP.setVisible(true);
         placaNumber.setText(settings.getPlaca());
         cpuNumber.setText(settings.getCpu());
