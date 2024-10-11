@@ -115,7 +115,7 @@ public class PrincipalView extends javax.swing.JFrame {
 
     private void hpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hpButtonActionPerformed
         // TODO add your handling code here:
-        CompanyView companyHP = new CompanyView();
+        CompanyViewHP companyHP = new CompanyViewHP();
         Compania hp = new Compania("HP", 16, 3, 3, 2);
         companyHP.setCompany(hp);
         System.out.println(companyHP.getCompany().getNombre()); // AQUI FUNCIONAAA
@@ -125,7 +125,7 @@ public class PrincipalView extends javax.swing.JFrame {
 
     private void dellButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dellButtonActionPerformed
         // TODO add your handling code here:
-        CompanyView companyDELL = new CompanyView();
+        CompanyViewHP companyDELL = new CompanyViewHP();
         companyDELL.setVisible(true);
         dispose();
     }//GEN-LAST:event_dellButtonActionPerformed
@@ -139,9 +139,9 @@ public class PrincipalView extends javax.swing.JFrame {
 
     private void bothButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bothButtonActionPerformed
         // TODO add your handling code here:
-        CompanyView companyHP = new CompanyView();
+        CompanyViewHP companyHP = new CompanyViewHP();
         companyHP.setVisible(true);
-        CompanyView companyDELL = new CompanyView();
+        CompanyViewHP companyDELL = new CompanyViewHP();
         companyDELL.setVisible(true);
         dispose();
     }//GEN-LAST:event_bothButtonActionPerformed
