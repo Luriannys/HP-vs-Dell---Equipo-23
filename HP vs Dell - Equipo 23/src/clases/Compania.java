@@ -58,6 +58,7 @@ public class Compania extends Thread {
         this.diasEnsambladores = 2;
         this.pm = new ProjectManager();
         this.director = new Director(pm);
+        
     }
 
     public float getGanancias() {
