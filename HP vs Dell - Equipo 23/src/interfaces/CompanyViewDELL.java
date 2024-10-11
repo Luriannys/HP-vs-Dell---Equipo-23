@@ -31,8 +31,18 @@ public class CompanyViewDELL extends javax.swing.JFrame {
         
         String dead = settings.getDay();
         
-        System.out.println(this.getCompany().getNombre()); // AQUI NO FUNCIONA
+        Compania dell = new Compania("DELL", 12, 2, 2, 3);
         
+        companyName.setText(dell.getNombre());
+        placaStorage.setText("0"+"/"+ dell.getStoragePlacas());
+        cpuStorage.setText("0"+"/"+ dell.getStorageCPU());
+        ramStorage.setText("0"+"/"+ dell.getStorageRAM());
+        fuenteStorage.setText("0"+"/"+ dell.getStorageFuentes());
+        tarjetaStorage.setText("0"+"/"+ dell.getStorageTarjetas());
+        
+        profits.setText("GANANCIAS: $" + dell.getGanancias());
+        costs.setText("COSTOS: $" + dell.getCostos());
+        utility.setText("UTILIDAD: $" + dell.getUtilidad());
         // Falta actualizar esto constantemente
         
     }

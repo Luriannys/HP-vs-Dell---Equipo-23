@@ -1,19 +1,18 @@
 package interfaces;
 import clases.Compania;
 import clases.*;
+import java.util.HashSet;
 
 /**
  *
  * @author Luriannys Junco
  */
-public class CompanyView extends javax.swing.JFrame {
-    
-    Compania company;
+public class CompanyViewHP extends javax.swing.JFrame {
 
     /**
      * Creates new form principal
      */
-    public CompanyView() {
+    public CompanyViewHP() {
         
         initComponents();
         
@@ -30,21 +29,20 @@ public class CompanyView extends javax.swing.JFrame {
         
         String dead = settings.getDay();
         
-        System.out.println(this.getCompany().getNombre()); // AQUI NO FUNCIONA
+        Compania hp = new Compania("HP", 16, 3, 3, 2);
         
-        // Falta actualizar esto constantemente
+        companyName.setText(hp.getNombre());
+        placaStorage.setText("0"+"/"+ hp.getStoragePlacas());
+        cpuStorage.setText("0"+"/"+ hp.getStorageCPU());
+        ramStorage.setText("0"+"/"+ hp.getStorageRAM());
+        fuenteStorage.setText("0"+"/"+ hp.getStorageFuentes());
+        tarjetaStorage.setText("0"+"/"+ hp.getStorageTarjetas());
         
+        profits.setText("GANANCIAS: $" + hp.getGanancias());
+        costs.setText("COSTOS: $" + hp.getCostos());
+        utility.setText("UTILIDAD: $" + hp.getUtilidad());
     }
-
-    public Compania getCompany() {
-        return company;
-    }
-
-    public void setCompany(Compania company) {
-        this.company = company;
-    }
-    
-    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -540,14 +538,30 @@ public class CompanyView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CompanyView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompanyViewHP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CompanyView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompanyViewHP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CompanyView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompanyViewHP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CompanyView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompanyViewHP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -569,7 +583,7 @@ public class CompanyView extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {
-                new CompanyView().setVisible(true);
+                new CompanyViewHP().setVisible(true);
             }
         });
     }
