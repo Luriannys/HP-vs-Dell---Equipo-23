@@ -1,5 +1,9 @@
 package interfaces;
 import clases.Compania;
+import clases.Director;
+import clases.ProjectManager;
+import clases.Trabajadores;
+import java.util.concurrent.Semaphore;
 
 /**
  *
@@ -54,6 +58,20 @@ public class CompanyViewHP extends javax.swing.JFrame {
         
         // Dias de entrega
         deadlineLabel.setText("DÍAS DE ENTREGA: " + (Integer.parseInt(settings.getDead()) - hp.getDirector().getDias()));
+        
+        //Compania hp= new Compania();
+        Semaphore semaforo= new Semaphore(3);
+        ProjectManager pm =new ProjectManager();
+        Thread t =new Thread(pm);
+        Thread t1 =new Thread(new Director(pm));
+        Thread t2=new Thread(new Trabajadores(hp));
+        
+        //multithread
+        
+        t.start();
+        t1.start();
+        t2.start();
+        System.out.println("Fuera del HIloooo");
     }
 
     public Compania getCompany() {

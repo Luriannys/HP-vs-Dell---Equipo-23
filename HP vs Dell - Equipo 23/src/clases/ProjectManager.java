@@ -7,6 +7,7 @@ package clases;
  */
 
 
+import interfaces.SettingsView;
 import java.time.Duration;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
@@ -21,15 +22,17 @@ public class ProjectManager extends Thread{
     int salario=40;
     int pago;
     int faltas=0;
-    int horas;
+    int horas=0;
     Semaphore semaphore;
-    public int dias;
+    public int dias=0;
     int deadline;
     int tiempo;
     String accion;
 
     public ProjectManager() {
-        //this.deadline=deadline;
+        SettingsView settings = new SettingsView();
+        this.deadline= Integer.parseInt(settings.getDead());
+        this.tiempo=Integer.parseInt(settings.getDay());
         this.horas = 0;
         this.semaphore = new Semaphore(5);
         this.dias = 0;

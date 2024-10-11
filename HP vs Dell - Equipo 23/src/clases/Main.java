@@ -35,11 +35,12 @@ public class Main extends Thread{
    public static void main(String[] args) {
        
        //Iniciar interfaz
+       PrincipalView principalView = new PrincipalView();
+       principalView.setVisible(true);
        
        
        
-       
-       int tiempo=48;
+       /*int tiempo=48;
        int deadline=30;
         //Compania hp= new Compania();
         Semaphore semaforo= new Semaphore(3);
@@ -53,10 +54,9 @@ public class Main extends Thread{
         t.start();
         t1.start();
         t2.start();
-        System.out.println("Fuera del HIloooo");
+        System.out.println("Fuera del HIloooo");*/
         
-        PrincipalView principalView = new PrincipalView();
-       principalView.setVisible(true);
+        
         
     }
    

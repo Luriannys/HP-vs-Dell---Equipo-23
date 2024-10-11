@@ -12,6 +12,7 @@ package clases;
 
 
 
+import interfaces.SettingsView;
 import java.time.Duration;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
@@ -34,10 +35,13 @@ public class Director extends Thread {
     int faltas;
     int tiempo;
     String accion;
+    int ganancias;
 
     public Director(ProjectManager pm) {
         this.semaphore = new Semaphore(5);
-        this.dias = 0;
+        SettingsView settings = new SettingsView();
+        this.deadline= Integer.parseInt(settings.getDead());
+        this.tiempo=Integer.parseInt(settings.getDay());        this.dias = 0;
         //this.deadline = ;
         this.pm = pm;
         //this.tiempo=tiempo;
@@ -79,7 +83,7 @@ public class Director extends Thread {
         while (dias!=deadline){
             revision = (int)(Math.random()*24+1);
             System.out.println("El "+ this.trabajo +" comienza a trabajar ");
-            accion="El Director esta trabajando";
+            this.accion="El Director esta trabajando";
             System.out.println("El Director revisara al Project Manager a la hora "+revision);
             
               
@@ -107,6 +111,8 @@ public class Director extends Thread {
             System.out.println("El "+trabajo+" esta enviando las computadoras");
             Thread.sleep(Duration.ofSeconds(tiempo));
             System.out.println("El "+trabajo+" termino de enviar las computadoras");
+            //ganancias=this.get;
+            
             //compania.ganancias=compania.ganancias+
            }
         

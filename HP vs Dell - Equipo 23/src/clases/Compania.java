@@ -66,7 +66,7 @@ public class Compania extends Thread {
         this.diasEnsambladores = 2;
         this.pm = new ProjectManager();
         this.director = new Director(pm);
-        this.tb= new Trabajadores();
+        this.tb= new Trabajadores(this);
         this.cantidadplacas=1;
         this.cantidadCPU=cantidadCPU;
         this.cantidadRAM=cantidadRAM;

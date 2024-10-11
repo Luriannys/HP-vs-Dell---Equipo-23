@@ -1,5 +1,6 @@
 package clases;
 
+import interfaces.SettingsView;
 import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,16 +38,19 @@ public void run(){
     
 }
 
-public Trabajadores() {
-    this.tiempo=tiempo;
-    this.deadline=deadline;
+public Trabajadores(Compania compania) {
+    SettingsView settings = new SettingsView();
+    this.deadline= Integer.parseInt(settings.getDead());
+    this.tiempo=Integer.parseInt(settings.getDay());
+    this.compania=compania;
 
 }
 
 public void produccion(){
     
-        try {            
-            while (dias!=deadline){
+           
+            this.proceso();
+           /* while (dias!=deadline){
                 
             System.out.println("Dia "+dias);
             System.out.println("Los productores estan trabajando");
@@ -147,11 +151,10 @@ public void produccion(){
                    
 
 
-}
-            
+}          
         } catch (InterruptedException ex) {
             Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     
 
     }
@@ -165,7 +168,7 @@ public void produccion(){
                 Thread.sleep(Duration.ofSeconds(tiempo));
             
                 dias++;
-                if ("HP".equals(compania.getNombre())){
+                
                     almacenRAM=almacenRAM+compania.getProduPlacas();
                     almacen_Fpoder=almacen_Fpoder+compania.getProduFuentes();
                     System.out.println("Los productores construyeron "+compania.getProduRAM()+" RAM y "+compania.getProduFuentes()+"  Fuentes de poder");
@@ -179,7 +182,7 @@ public void produccion(){
                     this.almacenRAM=this.almacenRAM-2;
                     this.almacen_Fpoder=this.almacen_Fpoder-4;
                     }
-                     if ((i+1)%4==0){
+                     if ((i+1)%compania.frecuenciaGrafica==0){
                         System.out.println("Los emsambladores construyeron una Computadora con Grafica");
                         almacenPCG=almacenPCG+1;
                         i++;
@@ -193,18 +196,25 @@ public void produccion(){
                     
                     System.out.println("Los emsambladores construyeron una Computadora");
                     }
-                }
+                
                 if (i==4){
                         i=0;
                     }
                                     
                    //los que tardan 1 dia se suman y ya 
-                 
-                   if (dias%3 ==0){
+                   
+                   
+                   if (dias%compania.getDiasPlacas() ==0){
+                       //se suman cada dos dias 
+                       almacenPlaca=almacenPlaca+compania.getProduPlacas();
+                       almacenCPU=almacenCPU+compania.getProduCPU();
+                       System.out.println("Los productores construyeron 1 placa base y 1 CPU ");
+                   }
+                   if (dias%compania.getDiasTarjetas() ==0){
                        //se suman cada tres dias 
                        almacenGrafica=almacenGrafica+compania.getProduTarjetas();
-                       almacenCPU=almacenCPU+1;
-                       System.out.println("Los productores construyeron 1 Grafica, 1 CPU y Placa base ");
+                       
+                       System.out.println("Los productores construyeron 1 Grafica ");
                    }
                 
                 } catch (InterruptedException ex) {
