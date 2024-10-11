@@ -81,13 +81,13 @@ public void produccion(){
                 dias++;
                
                 if ("HP".equals(compania.getNombre())){
-                     almacenRAM=almacenRAM+2;
-                    almacen_Fpoder=almacen_Fpoder+3;
+                    almacenRAM=almacenRAM+compania.getProduPlacas();
+                    almacen_Fpoder=almacen_Fpoder+compania.getProduFuentes();
                     System.out.println("Los productores construyeron 2 RAM y 3 Fuentes de poder");
                     pago=pago+40+34+20+26+16+50;
                     System.out.println("PCs "+almacenPC);
                     System.out.println("PCs graficas "+almacenPCG);
-                    if (almacenPlaca>0 &&almacenCPU>0&&almacenRAM>1&&almacen_Fpoder>3){
+                    if (almacenPlaca>0 &&almacenCPU>0 &&almacenRAM>1 && almacen_Fpoder>3){
                     
                     this.almacenPlaca=this.almacenPlaca-1;
                     this.almacenCPU=this.almacenCPU-1;
@@ -112,20 +112,18 @@ public void produccion(){
                 if (i==4){
                         i=0;
                     }
-                    
-                
-                
+                                    
                    //los que tardan 1 dia se suman y ya 
                  
                    if (dias%3 ==0){
                        //se suman cada tres dias 
-                       almacenGrafica=almacenGrafica+1;
+                       almacenGrafica=almacenGrafica+compania.getProduTarjetas();
                        almacenCPU=almacenCPU+1;
                        System.out.println("Los productores construyeron 1 Grafica, 1 CPU y Placa base ");
                    }
                 }else{
-                    almacenRAM=almacenRAM+3;
-                    almacen_Fpoder=almacen_Fpoder+3;
+                    almacenRAM=almacenRAM+compania.getProduRAM();
+                    almacen_Fpoder=almacen_Fpoder+compania.getProduFuentes();
                     System.out.println("Los productores construyeron 3 RAM y 3 Fuentes de poder");
                     pago=pago+40+34+20+26+16+50;
                     System.out.println("PCs "+almacenPC);
@@ -161,13 +159,13 @@ public void produccion(){
                    //los que tardan 1 dia se suman y ya 
                    if (dias%2 ==0){
                        //se suman cada dos dias 
-                       almacenPlaca=almacenPlaca+1;
-                       almacenCPU=almacenCPU+1;
+                       almacenPlaca=almacenPlaca+compania.getProduPlacas();
+                       almacenCPU=almacenCPU+compania.getProduCPU();
                        System.out.println("Los productores construyeron 1 placa base y 1 CPU ");
                    }
                    if (dias%3 ==0){
                        //se suman cada tres dias 
-                       almacenGrafica=almacenGrafica+1;
+                       almacenGrafica=almacenGrafica+compania.getProduTarjetas();
                        
                        System.out.println("Los productores construyeron 1 Grafica ");
                    }
