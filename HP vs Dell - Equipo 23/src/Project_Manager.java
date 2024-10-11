@@ -63,6 +63,7 @@ public class Project_Manager extends Thread{
             if (horas==24){
                 horas=0;
                 dias++;
+                pago=pago+salario*24-100*faltas;
             }
             
         

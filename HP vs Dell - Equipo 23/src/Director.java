@@ -30,7 +30,7 @@ public class Director extends Thread {
     int revision = (int)(Math.random()*24+1);
     Project_Manager pm;
     int faltas;
-    private int tiempo;
+    int tiempo;
 
     public Director(int horas, Semaphore semaphore, int dias, int deadline, Project_Manager pm,int tiempo) {
         this.horas = horas;
@@ -70,6 +70,7 @@ public class Director extends Thread {
             System.out.println("El Director no atrapo al Project Manager");
                System.out.println("Faltas "+faltas);
                dias++;
+               pago=pago+salario*24;
            }
         }
            if (deadline==dias){
