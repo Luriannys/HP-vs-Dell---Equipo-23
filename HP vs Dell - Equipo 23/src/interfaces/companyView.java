@@ -1,11 +1,15 @@
 package interfaces;
+import clases.Compania;
 import clases.*;
+
 /**
  *
  * @author Luriannys Junco
  */
 public class CompanyView extends javax.swing.JFrame {
     
+    Compania company;
+
     /**
      * Creates new form principal
      */
@@ -15,8 +19,29 @@ public class CompanyView extends javax.swing.JFrame {
         
         this.setLocationRelativeTo(null);
         
-        Compania company = new Compania(5);
+        SettingsView settings = new SettingsView();
         
+        placaNumber.setText(settings.getPlaca());
+        cpuNumber.setText(settings.getCpu());
+        ramNumber.setText(settings.getRam());
+        fuenteNumber.setText(settings.getFuente());
+        tarjetaNumber.setText(settings.getTarjeta());
+        ensambladoresNumber.setText(settings.getEnsambladores());
+        
+        String dead = settings.getDay();
+        
+        System.out.println(this.getCompany().getNombre()); // AQUI NO FUNCIONA
+        
+        // Falta actualizar esto constantemente
+        
+    }
+
+    public Compania getCompany() {
+        return company;
+    }
+
+    public void setCompany(Compania company) {
+        this.company = company;
     }
     
     

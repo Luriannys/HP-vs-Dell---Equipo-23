@@ -1,7 +1,7 @@
 package clases;
 
 
-import interfaces.PrincipalView;
+import interfaces.*;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +22,9 @@ public class Main extends Thread{
     public int horas;
     public int dias;
     public boolean computadora;
-    public int deadline=30;
+    public int deadline;
+    
+    
     
 
     public Main(Semaphore semaforo,int id) {
@@ -42,9 +44,9 @@ public class Main extends Thread{
        int deadline=30;
         //Compania hp= new Compania();
         Semaphore semaforo= new Semaphore(3);
-        Project_Manager pm =new Project_Manager(0,semaforo,0,deadline,tiempo);
+        ProjectManager pm =new ProjectManager();
         Thread t =new Thread(pm);
-        Thread t1 =new Thread(new Director(0,semaforo,0,deadline,pm,tiempo));
+        Thread t1 =new Thread(new Director(pm));
         Thread t2=new Thread(new Trabajadores(tiempo,30));
         
         //multithread

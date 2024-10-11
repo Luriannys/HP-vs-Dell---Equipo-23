@@ -9,25 +9,55 @@ package clases;
  *
  * @author rgabr
  */
-public class Compania {
-    int deadline;
+public class Compania extends Thread {
     float ganancias;
     float costos;
     float utilidad;
     String nombre;
+    int cantidadTrabajadores;
+    int produPlacas;
+    int diasPlacas;
+    int storagePlacas;
+    int produCPU;
+    int diasCPU;
+    int storageCPU;
+    int produRAM;
+    int diasRAM;
+    int storageRAM;
+    int produFuentes;
+    int diasFuentes;
+    int storageFuentes;
+    int produTarjetas;
+    int diasTarjetas;
+    int storageTarjetas;
+    int produEnsambladores;
+    int diasEnsambladores;
+    ProjectManager pm;
+    Director director;
     
-    
 
-    public Compania(int deadline) {
-        this.deadline = deadline;
-    }
-
-    public int getDeadline() {
-        return deadline;
-    }
-
-    public void setDeadline(int deadline) {
-        this.deadline = deadline;
+    public Compania(String nombre, int cantidadTrabajadores, int diasPlacas, int diasCPU, int produRAM) {
+        this.nombre = nombre;
+        this.cantidadTrabajadores = cantidadTrabajadores;
+        this.produPlacas = 1;
+        this.diasPlacas = diasPlacas;
+        this.storagePlacas = 25;
+        this.produCPU = 1;
+        this.diasCPU = diasCPU;
+        this.storageCPU = 20;
+        this.produRAM = produRAM;
+        this.diasRAM = 1;
+        this.storageRAM = 55;
+        this.produFuentes = 3;
+        this.diasFuentes = 1;
+        this.storageFuentes = 35;
+        this.produTarjetas = 1;
+        this.diasTarjetas = 3;
+        this.storageTarjetas = 10;
+        this.produEnsambladores = 1;
+        this.diasEnsambladores = 2;
+        this.pm = new ProjectManager();
+        this.director = new Director(pm);
     }
 
     public float getGanancias() {
@@ -53,6 +83,175 @@ public class Compania {
     public void setUtilidad(float utilidad) {
         this.utilidad = utilidad;
     }
-            
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCantidadTrabajadores() {
+        return cantidadTrabajadores;
+    }
+
+    public void setCantidadTrabajadores(int cantidadTrabajadores) {
+        this.cantidadTrabajadores = cantidadTrabajadores;
+    }
+
+    public int getProduPlacas() {
+        return produPlacas;
+    }
+
+    public void setProduPlacas(int produPlacas) {
+        this.produPlacas = produPlacas;
+    }
+
+    public int getDiasPlacas() {
+        return diasPlacas;
+    }
+
+    public void setDiasPlacas(int diasPlacas) {
+        this.diasPlacas = diasPlacas;
+    }
+
+    public int getStoragePlacas() {
+        return storagePlacas;
+    }
+
+    public void setStoragePlacas(int storagePlacas) {
+        this.storagePlacas = storagePlacas;
+    }
+
+    public int getProduCPU() {
+        return produCPU;
+    }
+
+    public void setProduCPU(int produCPU) {
+        this.produCPU = produCPU;
+    }
+
+    public int getDiasCPU() {
+        return diasCPU;
+    }
+
+    public void setDiasCPU(int diasCPU) {
+        this.diasCPU = diasCPU;
+    }
+
+    public int getStorageCPU() {
+        return storageCPU;
+    }
+
+    public void setStorageCPU(int storageCPU) {
+        this.storageCPU = storageCPU;
+    }
+
+    public int getProduRAM() {
+        return produRAM;
+    }
+
+    public void setProduRAM(int produRAM) {
+        this.produRAM = produRAM;
+    }
+
+    public int getDiasRAM() {
+        return diasRAM;
+    }
+
+    public void setDiasRAM(int diasRAM) {
+        this.diasRAM = diasRAM;
+    }
+
+    public int getStorageRAM() {
+        return storageRAM;
+    }
+
+    public void setStorageRAM(int storageRAM) {
+        this.storageRAM = storageRAM;
+    }
+
+    public int getProduFuentes() {
+        return produFuentes;
+    }
+
+    public void setProduFuentes(int produFuentes) {
+        this.produFuentes = produFuentes;
+    }
+
+    public int getDiasFuentes() {
+        return diasFuentes;
+    }
+
+    public void setDiasFuentes(int diasFuentes) {
+        this.diasFuentes = diasFuentes;
+    }
+
+    public int getStorageFuentes() {
+        return storageFuentes;
+    }
+
+    public void setStorageFuentes(int storageFuentes) {
+        this.storageFuentes = storageFuentes;
+    }
+
+    public int getProduTarjetas() {
+        return produTarjetas;
+    }
+
+    public void setProduTarjetas(int produTarjetas) {
+        this.produTarjetas = produTarjetas;
+    }
+
+    public int getDiasTarjetas() {
+        return diasTarjetas;
+    }
+
+    public void setDiasTarjetas(int diasTarjetas) {
+        this.diasTarjetas = diasTarjetas;
+    }
+
+    public int getStorageTarjetas() {
+        return storageTarjetas;
+    }
+
+    public void setStorageTarjetas(int storageTarjetas) {
+        this.storageTarjetas = storageTarjetas;
+    }
+
+    public int getProduEnsambladores() {
+        return produEnsambladores;
+    }
+
+    public void setProduEnsambladores(int produEnsambladores) {
+        this.produEnsambladores = produEnsambladores;
+    }
+
+    public int getDiasEnsambladores() {
+        return diasEnsambladores;
+    }
+
+    public void setDiasEnsambladores(int diasEnsambladores) {
+        this.diasEnsambladores = diasEnsambladores;
+    }
+
+    public ProjectManager getPm() {
+        return pm;
+    }
+
+    public void setPm(ProjectManager pm) {
+        this.pm = pm;
+    }
+
+    public Director getDirector() {
+        return director;
+    }
+
+    public void setDirector(Director director) {
+        this.director = director;
+    }
+    
+   
     
 }

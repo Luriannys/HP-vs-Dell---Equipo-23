@@ -1,5 +1,7 @@
 package interfaces;
 
+import clases.*;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -114,6 +116,9 @@ public class PrincipalView extends javax.swing.JFrame {
     private void hpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hpButtonActionPerformed
         // TODO add your handling code here:
         CompanyView companyHP = new CompanyView();
+        Compania hp = new Compania("HP", 16, 3, 3, 2);
+        companyHP.setCompany(hp);
+        System.out.println(companyHP.getCompany().getNombre()); // AQUI FUNCIONAAA
         companyHP.setVisible(true);
         dispose();
     }//GEN-LAST:event_hpButtonActionPerformed

@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author rgabr
  */
-public class Project_Manager extends Thread{
+public class ProjectManager extends Thread{
     String trabajo= "Project Manager" ;
     int salario=40;
     int pago;
@@ -27,12 +27,12 @@ public class Project_Manager extends Thread{
     int deadline;
     int tiempo;
 
-    public Project_Manager(int horas, Semaphore semaphore, int dias, int deadline,int tiempo) {
-        this.deadline=deadline;
-        this.horas = horas;
-        this.semaphore = semaphore;
-        this.dias = dias;
-        this.tiempo=tiempo;
+    public ProjectManager() {
+        //this.deadline=deadline;
+        this.horas = 0;
+        this.semaphore = new Semaphore(5);
+        this.dias = 0;
+        //this.tiempo=tiempo;
     }
 
     
@@ -72,7 +72,7 @@ public class Project_Manager extends Thread{
         }
         
         } catch (InterruptedException ex) {
-                    Logger.getLogger(Project_Manager.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ProjectManager.class.getName()).log(Level.SEVERE, null, ex);
                 }
     }
 

@@ -22,25 +22,24 @@ import java.util.logging.Logger;
  * @author rgabr
  */
 public class Director extends Thread {
-    String trabajo= "Director" ;
-    int salario=60;
+    String trabajo = "Director" ;
+    int salario = 60;
     int pago;
     int horas;
     Semaphore semaphore;
     int dias;
     int deadline;
     int revision = (int)(Math.random()*24+1);
-    Project_Manager pm;
+    ProjectManager pm;
     int faltas;
     int tiempo;
 
-    public Director(int horas, Semaphore semaphore, int dias, int deadline, Project_Manager pm,int tiempo) {
-        this.horas = horas;
-        this.semaphore = semaphore;
-        this.dias = dias;
-        this.deadline=deadline;
-        this.pm=pm;
-        this.tiempo=tiempo;
+    public Director(ProjectManager pm) {
+        this.semaphore = new Semaphore(5);
+        this.dias = 0;
+        //this.deadline = ;
+        this.pm = pm;
+        //this.tiempo=tiempo;
         
     }
     

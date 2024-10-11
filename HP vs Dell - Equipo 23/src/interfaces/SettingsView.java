@@ -43,6 +43,40 @@ public class SettingsView extends javax.swing.JFrame {
         
     }
 
+    public String getDay() {
+        return day;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public String getCpu() {
+        return cpu;
+    }
+
+    public String getRam() {
+        return ram;
+    }
+
+    public String getFuente() {
+        return fuente;
+    }
+
+    public String getTarjeta() {
+        return tarjeta;
+    }
+
+    public String getEnsambladores() {
+        return ensambladores;
+    }
+
+    public String getDead() {
+        return dead;
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -303,7 +337,7 @@ public class SettingsView extends javax.swing.JFrame {
         jLabel7.setText("Cantidad inicial de trabajadores");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        deadline.setFont(new java.awt.Font("Segoe UI", 2, 8)); // NOI18N
+        deadline.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         deadline.setPreferredSize(new java.awt.Dimension(70, 20));
         deadline.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -312,7 +346,7 @@ public class SettingsView extends javax.swing.JFrame {
         });
         jPanel1.add(deadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
-        dayDuration.setFont(new java.awt.Font("Segoe UI", 2, 8)); // NOI18N
+        dayDuration.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         dayDuration.setPreferredSize(new java.awt.Dimension(70, 20));
         dayDuration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
