@@ -76,7 +76,7 @@ public class Director extends Thread {
             //enviar computadoras 24 horas
             //almacen de compus =0
             System.out.println("El "+trabajo+" esta enviando las computadoras");
-            Thread.sleep(24000);
+            Thread.sleep(Duration.ofSeconds(tiempo));
             System.out.println("El "+trabajo+" termino de enviar las computadoras");
             //compania.ganancias=compania.ganancias+
            }

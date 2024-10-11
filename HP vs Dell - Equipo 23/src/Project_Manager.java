@@ -54,14 +54,17 @@ public class Project_Manager extends Thread{
             System.out.println("Pasaron "+this.horas+" hora(s)");
             
             }
+            if (horas>16){
             System.out.println("El "+this.trabajo+" esta trabajando");
             Thread.sleep(Duration.ofSeconds(tiempo/24));
             horas++;
+            }
             System.out.println("Pasaron "+this.horas+" hora(s)");
             if (horas==24){
                 horas=0;
+                dias++;
             }
-            dias++;
+            
         
         }
         

@@ -69,9 +69,7 @@ public Trabajadores(int tiempo,int deadline) {
 
 public void produccion(){
     
-        try {
-        
-            
+        try {            
             while (dias!=deadline){
                 
             System.out.println("Dia "+dias);
@@ -102,7 +100,7 @@ public void produccion(){
                     almacenPC=almacenPC+1;
                     i++;
                     
-                    System.out.println("I "+i);
+                    
                     System.out.println("Los emsambladores construyeron una Computadora");
                     }
                 }
@@ -125,7 +123,7 @@ public void produccion(){
                        System.out.println("Los productores construyeron 1 Grafica y 1 CPU ");
                    }
                    
-                   // si las piezas necesarias para la computadora estan listas computadora = true y hilo emsabladores se activa
+                   
 
 
 }
