@@ -1,5 +1,8 @@
 package interfaces;
 import clases.Compania;
+import clases.ProjectManager;
+import clases.Trabajadores;
+import java.util.concurrent.Semaphore;
 
 /**
  *
@@ -15,6 +18,22 @@ public class CompanyViewDELL extends javax.swing.JFrame {
     public CompanyViewDELL() {
         
         initComponents();
+        Compania dell = new Compania("DELL", 12, 2, 2, 3, 5, 6, 5, 5, 80000, 120000);
+         Semaphore semaforo= new Semaphore(3);
+        ProjectManager pm =dell.getPm();
+        Trabajadores tb=new Trabajadores(dell);
+        Thread t =new Thread(pm);
+        Thread t1 = new Thread(dell.getDirector());
+        Thread t2=new Thread(tb);
+        
+        //multithread
+        t.start();
+        t1.start();
+        t2.start();
+        System.out.println("Fuera del HIloooo");
+        dell.Calcularganancia();
+        dell.Calcularcostos();
+        dell.Calcularutilidad();
         
         this.setLocationRelativeTo(null);
         
@@ -29,16 +48,16 @@ public class CompanyViewDELL extends javax.swing.JFrame {
         
         String dead = settings.getDay();
         
-        Compania dell = new Compania("DELL", 12, 2, 2, 3, 5, 6, 5, 5, 80000, 120000);
+        
         
         companyName.setText(dell.getNombre()); //Nombre Compania
         
         // Status Almacen
-        placaStorage.setText("0"+"/"+ dell.getStoragePlacas());
-        cpuStorage.setText("0"+"/"+ dell.getStorageCPU());
-        ramStorage.setText("0"+"/"+ dell.getStorageRAM());
-        fuenteStorage.setText("0"+"/"+ dell.getStorageFuentes());
-        tarjetaStorage.setText("0"+"/"+ dell.getStorageTarjetas());
+        placaStorage.setText(dell.getTb().getAlmacenPlaca()+"/"+ dell.getStoragePlacas());
+        cpuStorage.setText(dell.getTb().getAlmacenCPU()+"/"+ dell.getStorageCPU());
+        ramStorage.setText(dell.getTb().getAlmacenRAM()+"/"+ dell.getStorageRAM());
+        fuenteStorage.setText(dell.getTb().getAlmacen_Fpoder()+"/"+ dell.getStorageFuentes());
+        tarjetaStorage.setText(dell.getTb().getAlmacenGrafica()+"/"+ dell.getStorageTarjetas());
         
         //StatusCompania
         profits.setText("GANANCIAS: $" + dell.getGanancias());

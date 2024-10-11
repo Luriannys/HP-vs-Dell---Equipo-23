@@ -32,18 +32,21 @@ public class Director extends Thread {
     int deadline;
     int revision = (int)(Math.random()*24+1);
     ProjectManager pm;
+    Trabajadores tb;
     int faltas;
     int tiempo;
     String accion;
     int ganancias;
 
-    public Director(ProjectManager pm) {
+    public Director(ProjectManager pm, Trabajadores tb) {
         this.semaphore = new Semaphore(5);
         SettingsView settings = new SettingsView();
         this.deadline= Integer.parseInt(settings.getDead());
-        this.tiempo=Integer.parseInt(settings.getDay());        this.dias = 0;
+        this.tiempo=Integer.parseInt(settings.getDay());        
+        this.dias = 0;
         //this.deadline = ;
         this.pm = pm;
+        this.tb=tb;
         //this.tiempo=tiempo;
         
     }
@@ -83,7 +86,7 @@ public class Director extends Thread {
         while (dias!=deadline){
             revision = (int)(Math.random()*24+1);
             System.out.println("El "+ this.trabajo +" comienza a trabajar ");
-            this.accion="El Director esta trabajando";
+            this.accion="Trabajando";
             System.out.println("El Director revisara al Project Manager a la hora "+revision);
             
               
@@ -111,7 +114,7 @@ public class Director extends Thread {
             System.out.println("El "+trabajo+" esta enviando las computadoras");
             Thread.sleep(Duration.ofSeconds(tiempo));
             System.out.println("El "+trabajo+" termino de enviar las computadoras");
-            //ganancias=this.get;
+            
             
             //compania.ganancias=compania.ganancias+
            }
@@ -123,6 +126,48 @@ public class Director extends Thread {
         
     }
 
+    public int getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(int deadline) {
+        this.deadline = deadline;
+    }
+
+    public int getRevision() {
+        return revision;
+    }
+
+    public void setRevision(int revision) {
+        this.revision = revision;
+    }
+
+    public ProjectManager getPm() {
+        return pm;
+    }
+
+    public void setPm(ProjectManager pm) {
+        this.pm = pm;
+    }
+
+    public Trabajadores getTb() {
+        return tb;
+    }
+
+    public void setTb(Trabajadores tb) {
+        this.tb = tb;
+    }
+
+    public int getGanancias() {
+        return ganancias;
+    }
+
+    public void setGanancias(int ganancias) {
+        this.ganancias = ganancias;
+    }
+
+    
+        
     public String getTrabajo() {
         return trabajo;
     }

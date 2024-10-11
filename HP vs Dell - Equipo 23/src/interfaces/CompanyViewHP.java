@@ -20,6 +20,25 @@ public class CompanyViewHP extends javax.swing.JFrame {
         
         initComponents();
         
+        Compania hp = new Compania("HP", 16, 3, 3, 2, 1, 2, 4, 4, 90000, 140000);
+        
+        
+        
+        Semaphore semaforo= new Semaphore(3);
+        ProjectManager pm =hp.getPm();
+        Trabajadores tb=new Trabajadores(hp);
+        Thread t =new Thread(pm);
+        Thread t1 = new Thread(hp.getDirector());
+        Thread t2=new Thread(tb);
+        
+        //multithread
+        t.start();
+        t1.start();
+        t2.start();
+        System.out.println("Fuera del HIloooo");
+        hp.Calcularganancia();
+        hp.Calcularcostos();
+        hp.Calcularutilidad();
         this.setLocationRelativeTo(null);
         
         SettingsView settings = new SettingsView();
@@ -33,18 +52,18 @@ public class CompanyViewHP extends javax.swing.JFrame {
         
         String dead = settings.getDay();
         
-        Compania hp = new Compania("HP", 16, 3, 3, 2, 1, 2, 4, 4, 90000, 140000);
         
         companyName.setText(hp.getNombre()); //Nombre Compania
         
         // Status Almacen
-        placaStorage.setText("0"+"/"+ hp.getStoragePlacas());
-        cpuStorage.setText("0"+"/"+ hp.getStorageCPU());
-        ramStorage.setText("0"+"/"+ hp.getStorageRAM());
-        fuenteStorage.setText("0"+"/"+ hp.getStorageFuentes());
-        tarjetaStorage.setText("0"+"/"+ hp.getStorageTarjetas());
+        placaStorage.setText(hp.getTb().getAlmacenPlaca()+"/"+ hp.getStoragePlacas());
+        cpuStorage.setText(hp.getTb().getAlmacenCPU()+"/"+ hp.getStorageCPU());
+        ramStorage.setText(hp.getTb().getAlmacenRAM()+"/"+ hp.getStorageRAM());
+        fuenteStorage.setText(hp.getTb().getAlmacen_Fpoder()+"/"+ hp.getStorageFuentes());
+        tarjetaStorage.setText(hp.getTb().getAlmacenGrafica()+"/"+ hp.getStorageTarjetas());
         
         //StatusCompania
+        
         profits.setText("GANANCIAS: $" + hp.getGanancias());
         costs.setText("COSTOS: $" + hp.getCostos());
         utility.setText("UTILIDAD: $" + hp.getUtilidad());
@@ -60,18 +79,8 @@ public class CompanyViewHP extends javax.swing.JFrame {
         deadlineLabel.setText("DÍAS DE ENTREGA: " + (Integer.parseInt(settings.getDead()) - hp.getDirector().getDias()));
         
         //Compania hp= new Compania();
-        Semaphore semaforo= new Semaphore(3);
-        ProjectManager pm =new ProjectManager();
-        Thread t =new Thread(pm);
-        Thread t1 =new Thread(new Director(pm));
-        Thread t2=new Thread(new Trabajadores(hp));
         
-        //multithread
         
-        t.start();
-        t1.start();
-        t2.start();
-        System.out.println("Fuera del HIloooo");
     }
 
     public Compania getCompany() {

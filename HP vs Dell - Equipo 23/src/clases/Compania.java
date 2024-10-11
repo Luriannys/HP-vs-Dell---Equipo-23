@@ -65,7 +65,7 @@ public class Compania extends Thread {
         this.produEnsambladores = 1;
         this.diasEnsambladores = 2;
         this.pm = new ProjectManager();
-        this.director = new Director(pm);
+        this.director = new Director(pm,tb);
         this.tb= new Trabajadores(this);
         this.cantidadplacas=1;
         this.cantidadCPU=cantidadCPU;
@@ -74,6 +74,17 @@ public class Compania extends Thread {
         this.frecuenciaGrafica=frecuenciaGrafica;
         this.costoPc = costoPc;
         this.costoPcgrafica = costoPcgrafica;
+    }
+    
+    public void Calcularganancia(){
+        this.setGanancias(this.getTb().getAlmacenPC()*this.getCostoPc()+this.getTb().getAlmacenPCG()*this.getCostoPcgrafica());
+    }
+    
+    public void Calcularcostos(){
+        this.setCostos(this.tb.getPago()+this.getPm().getPago()+this.getDirector().getPago());
+    }
+    public void Calcularutilidad(){
+        this.setUtilidad(this.getGanancias()-this.getCostos());
     }
 
     public float getGanancias() {

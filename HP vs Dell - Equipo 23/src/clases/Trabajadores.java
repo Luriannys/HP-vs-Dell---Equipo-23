@@ -251,6 +251,118 @@ public void produccion(){
     public void setAlmacen(int almacen) {
         this.almacen = almacen;
     }
+
+    public int getPago() {
+        return pago;
+    }
+
+    public void setPago(int pago) {
+        this.pago = pago;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
+    }
+
+    public int getDias() {
+        return dias;
+    }
+
+    public void setDias(int dias) {
+        this.dias = dias;
+    }
+
+    public int getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(int deadline) {
+        this.deadline = deadline;
+    }
+
+    public int getAlmacenRAM() {
+        return almacenRAM;
+    }
+
+    public void setAlmacenRAM(int almacenRAM) {
+        this.almacenRAM = almacenRAM;
+    }
+
+    public int getAlmacen_Fpoder() {
+        return almacen_Fpoder;
+    }
+
+    public void setAlmacen_Fpoder(int almacen_Fpoder) {
+        this.almacen_Fpoder = almacen_Fpoder;
+    }
+
+    public int getAlmacenPlaca() {
+        return almacenPlaca;
+    }
+
+    public void setAlmacenPlaca(int almacenPlaca) {
+        this.almacenPlaca = almacenPlaca;
+    }
+
+    public int getAlmacenGrafica() {
+        return almacenGrafica;
+    }
+
+    public void setAlmacenGrafica(int almacenGrafica) {
+        this.almacenGrafica = almacenGrafica;
+    }
+
+    public int getAlmacenCPU() {
+        return almacenCPU;
+    }
+
+    public void setAlmacenCPU(int almacenCPU) {
+        this.almacenCPU = almacenCPU;
+    }
+
+    public int getAlmacenPC() {
+        return almacenPC;
+    }
+
+    public void setAlmacenPC(int almacenPC) {
+        this.almacenPC = almacenPC;
+    }
+
+    public int getAlmacenPCG() {
+        return almacenPCG;
+    }
+
+    public void setAlmacenPCG(int almacenPCG) {
+        this.almacenPCG = almacenPCG;
+    }
+
+    public Compania getCompania() {
+        return compania;
+    }
+
+    public void setCompania(Compania compania) {
+        this.compania = compania;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
     
 
   
