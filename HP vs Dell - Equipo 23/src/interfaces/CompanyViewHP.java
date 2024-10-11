@@ -30,8 +30,18 @@ public class CompanyViewHP extends javax.swing.JFrame {
         
         String dead = settings.getDay();
         
-        System.out.println(this.getCompany().getNombre()); // AQUI NO FUNCIONA
+        Compania hp = new Compania("HP", 12, 2, 2, 3);
         
+        companyName.setText(hp.getNombre());
+        placaStorage.setText("0"+"/"+ hp.getStoragePlacas());
+        cpuStorage.setText("0"+"/"+ hp.getStorageCPU());
+        ramStorage.setText("0"+"/"+ hp.getStorageRAM());
+        fuenteStorage.setText("0"+"/"+ hp.getStorageFuentes());
+        tarjetaStorage.setText("0"+"/"+ hp.getStorageTarjetas());
+        
+        profits.setText("GANANCIAS: $" + hp.getGanancias());
+        costs.setText("COSTOS: $" + hp.getCostos());
+        utility.setText("UTILIDAD: $" + hp.getUtilidad());
         // Falta actualizar esto constantemente
         
     }
