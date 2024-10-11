@@ -54,6 +54,7 @@ public class Trabajadores extends Thread{
     private int almacenPC;
     private int almacenPCG;
     int i=0;
+    private Compania compania;
 
     
 
@@ -78,13 +79,15 @@ public void produccion(){
             System.out.println("Los productores estan trabajando");
             Thread.sleep(Duration.ofSeconds(tiempo));
                 dias++;
-                almacenRAM=almacenRAM+2;
-                almacen_Fpoder=almacen_Fpoder+3;
-                System.out.println("Los productores construyeron 2 RAM y 3 Fuentes de poder");
-                pago=pago+40+34+20+26+16+50;
-                System.out.println("PCs "+almacenPC);
-                System.out.println("PCs graficas "+almacenPCG);
-                if (almacenPlaca>0 &&almacenCPU>0&&almacenRAM>1&&almacen_Fpoder>3){
+               
+                if ("HP".equals(compania.getNombre())){
+                     almacenRAM=almacenRAM+2;
+                    almacen_Fpoder=almacen_Fpoder+3;
+                    System.out.println("Los productores construyeron 2 RAM y 3 Fuentes de poder");
+                    pago=pago+40+34+20+26+16+50;
+                    System.out.println("PCs "+almacenPC);
+                    System.out.println("PCs graficas "+almacenPCG);
+                    if (almacenPlaca>0 &&almacenCPU>0&&almacenRAM>1&&almacen_Fpoder>3){
                     
                     this.almacenPlaca=this.almacenPlaca-1;
                     this.almacenCPU=this.almacenCPU-1;
@@ -113,17 +116,62 @@ public void produccion(){
                 
                 
                    //los que tardan 1 dia se suman y ya 
-                   if (dias%2 ==0){
-                       //se suman cada dos dias 
-                       almacenPlaca=almacenPlaca+1;
-                       System.out.println("Los productores construyeron 1 placa base ");
-                   }
+                 
                    if (dias%3 ==0){
                        //se suman cada tres dias 
                        almacenGrafica=almacenGrafica+1;
                        almacenCPU=almacenCPU+1;
-                       System.out.println("Los productores construyeron 1 Grafica y 1 CPU ");
+                       System.out.println("Los productores construyeron 1 Grafica, 1 CPU y Placa base ");
                    }
+                }else{
+                    almacenRAM=almacenRAM+3;
+                    almacen_Fpoder=almacen_Fpoder+3;
+                    System.out.println("Los productores construyeron 3 RAM y 3 Fuentes de poder");
+                    pago=pago+40+34+20+26+16+50;
+                    System.out.println("PCs "+almacenPC);
+                    System.out.println("PCs graficas "+almacenPCG);
+                    if (almacenPlaca>0 &&almacenCPU>4&&almacenRAM>5&&almacen_Fpoder>4){
+                    
+                    this.almacenPlaca=this.almacenPlaca-1;
+                    this.almacenCPU=this.almacenCPU-5;
+                    this.almacenRAM=this.almacenRAM-6;
+                    this.almacen_Fpoder=this.almacen_Fpoder-5;
+                    
+                    if ((i+1)%5==0){
+                        System.out.println("Los emsambladores construyeron una Computadora con Grafica");
+                        almacenPCG=almacenPCG+1;
+                        i++;
+                        this.almacenGrafica=this.almacenGrafica-1;
+                        
+                    }else{
+                   
+                    almacenPC=almacenPC+1;
+                    i++;
+                    
+                    
+                    System.out.println("Los emsambladores construyeron una Computadora");
+                    }
+                }
+                if (i==4){
+                        i=0;
+                    }
+                    
+                
+                
+                   //los que tardan 1 dia se suman y ya 
+                   if (dias%2 ==0){
+                       //se suman cada dos dias 
+                       almacenPlaca=almacenPlaca+1;
+                       almacenCPU=almacenCPU+1;
+                       System.out.println("Los productores construyeron 1 placa base y 1 CPU ");
+                   }
+                   if (dias%3 ==0){
+                       //se suman cada tres dias 
+                       almacenGrafica=almacenGrafica+1;
+                       
+                       System.out.println("Los productores construyeron 1 Grafica ");
+                   }
+                }
                    
                    
 
