@@ -43,6 +43,22 @@ public class Director extends Thread {
         //this.tiempo=tiempo;
         
     }
+
+    public int getFaltas() {
+        return faltas;
+    }
+
+    public void setFaltas(int faltas) {
+        this.faltas = faltas;
+    }
+
+    public String getAccion() {
+        return accion;
+    }
+
+    public void setAccion(String accion) {
+        this.accion = accion;
+    }
     
     
     

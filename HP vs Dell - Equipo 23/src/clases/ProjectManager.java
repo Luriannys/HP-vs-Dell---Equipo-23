@@ -36,6 +36,14 @@ public class ProjectManager extends Thread{
         //this.tiempo=tiempo;
     }
 
+    public String getAccion() {
+        return accion;
+    }
+
+    public void setAccion(String accion) {
+        this.accion = accion;
+    }
+
     
     
     @Override

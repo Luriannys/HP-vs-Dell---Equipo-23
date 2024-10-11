@@ -32,18 +32,29 @@ public class CompanyViewHP extends javax.swing.JFrame {
         
         Compania hp = new Compania("HP", 12, 2, 2, 3);
         
-        companyName.setText(hp.getNombre());
+        companyName.setText(hp.getNombre()); //Nombre Compania
+        
+        // Status Almacen
         placaStorage.setText("0"+"/"+ hp.getStoragePlacas());
         cpuStorage.setText("0"+"/"+ hp.getStorageCPU());
         ramStorage.setText("0"+"/"+ hp.getStorageRAM());
         fuenteStorage.setText("0"+"/"+ hp.getStorageFuentes());
         tarjetaStorage.setText("0"+"/"+ hp.getStorageTarjetas());
         
+        //StatusCompania
         profits.setText("GANANCIAS: $" + hp.getGanancias());
         costs.setText("COSTOS: $" + hp.getCostos());
         utility.setText("UTILIDAD: $" + hp.getUtilidad());
         // Falta actualizar esto constantemente
         
+        //Status PM y Director
+        pmActions.setText("Project Manager: " + hp.getPm().getAccion());
+        pmFaltas.setText("Faltas: " + hp.getDirector().getFaltas());
+        pmDescuento.setText("Dinero descontado: " + hp.getDirector().getFaltas() * 100);
+        directorActions.setText("Director: " + hp.getDirector().getAccion());
+        
+        // Dias de entrega
+        deadlineLabel.setText("DÍAS DE ENTREGA: " + (Integer.parseInt(settings.getDead()) - hp.getDirector().getDias()));
     }
 
     public Compania getCompany() {
@@ -66,16 +77,11 @@ public class CompanyViewHP extends javax.swing.JFrame {
     private void initComponents() {
 
         companyNumbers = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         pmActions = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        faltasNumber = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        pmDescuentos = new javax.swing.JLabel();
+        pmFaltas = new javax.swing.JLabel();
         directorActions = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        dayDeadline = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        deadlineLabel = new javax.swing.JLabel();
+        pmDescuento = new javax.swing.JLabel();
         companyWorkers = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         minusPlaca = new javax.swing.JButton();
@@ -128,35 +134,20 @@ public class CompanyViewHP extends javax.swing.JFrame {
 
         companyNumbers.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setText("Project Manager");
-        companyNumbers.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        pmActions.setText("Project Manager");
+        companyNumbers.add(pmActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        pmActions.setText("0/0");
-        companyNumbers.add(pmActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+        pmFaltas.setText("Faltas");
+        companyNumbers.add(pmFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        jLabel8.setText("Faltas");
-        companyNumbers.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        directorActions.setText("Director");
+        companyNumbers.add(directorActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
-        faltasNumber.setText("0/0");
-        companyNumbers.add(faltasNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
+        deadlineLabel.setText("DÍAS DE ENTREGA");
+        companyNumbers.add(deadlineLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
-        jLabel9.setText("Director");
-        companyNumbers.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
-
-        pmDescuentos.setText("0/0");
-        companyNumbers.add(pmDescuentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
-
-        directorActions.setText("0/0");
-        companyNumbers.add(directorActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
-
-        jLabel25.setText("DÍAS DE ENTREGA");
-        companyNumbers.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
-
-        dayDeadline.setText("0/0");
-        companyNumbers.add(dayDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
-
-        jLabel13.setText("Dinero descontado");
-        companyNumbers.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        pmDescuento.setText("Dinero descontado");
+        companyNumbers.add(pmDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         getContentPane().add(companyNumbers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 220, 230));
 
@@ -427,7 +418,7 @@ public class CompanyViewHP extends javax.swing.JFrame {
         companyName.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         companyName.setForeground(new java.awt.Color(255, 255, 255));
         companyName.setText("companyName");
-        mainPanel.add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        mainPanel.add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
         mainBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nasa-Q1p7bh3SHj8-unsplash.jpg"))); // NOI18N
         mainBackground.setText("jLabel1");
@@ -608,20 +599,17 @@ public class CompanyViewHP extends javax.swing.JFrame {
     private javax.swing.JLabel costs;
     private javax.swing.JLabel cpuNumber;
     private javax.swing.JLabel cpuStorage;
-    private javax.swing.JLabel dayDeadline;
+    private javax.swing.JLabel deadlineLabel;
     private javax.swing.JLabel directorActions;
     private javax.swing.JLabel ensambladoresNumber;
-    private javax.swing.JLabel faltasNumber;
     private javax.swing.JLabel fuenteNumber;
     private javax.swing.JLabel fuenteStorage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -629,9 +617,6 @@ public class CompanyViewHP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel mainBackground;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton minusCPU;
@@ -649,7 +634,8 @@ public class CompanyViewHP extends javax.swing.JFrame {
     private javax.swing.JButton plusRAM;
     private javax.swing.JButton plusTarjeta;
     private javax.swing.JLabel pmActions;
-    private javax.swing.JLabel pmDescuentos;
+    private javax.swing.JLabel pmDescuento;
+    private javax.swing.JLabel pmFaltas;
     private javax.swing.JLabel profits;
     private javax.swing.JLabel ramNumber;
     private javax.swing.JLabel ramStorage;
