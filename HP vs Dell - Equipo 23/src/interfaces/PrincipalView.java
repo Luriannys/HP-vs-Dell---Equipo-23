@@ -13,6 +13,10 @@ public class PrincipalView extends javax.swing.JFrame {
      */
     public PrincipalView() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
+        
+        
     }
 
     /**

@@ -1,5 +1,5 @@
 package interfaces;
-
+import clases.*;
 /**
  *
  * @author Luriannys Junco
@@ -11,7 +11,12 @@ public class CompanyView extends javax.swing.JFrame {
      */
     public CompanyView() {
         
-        initComponents();              
+        initComponents();
+        
+        this.setLocationRelativeTo(null);
+        
+        Compania company = new Compania(5);
+        
     }
     
     

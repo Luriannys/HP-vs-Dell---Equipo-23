@@ -1,3 +1,5 @@
+package clases;
+
 
 import interfaces.PrincipalView;
 import java.util.concurrent.Semaphore;

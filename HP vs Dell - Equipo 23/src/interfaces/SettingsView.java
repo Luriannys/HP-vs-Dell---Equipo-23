@@ -1,16 +1,46 @@
 package interfaces;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Luriannys Junco
  */
 public class SettingsView extends javax.swing.JFrame {
 
+    String day;
+    String dead;
+    String placa;
+    String cpu;
+    String ram;
+    String fuente;
+    String tarjeta;
+    String ensambladores;
+
     /**
      * Creates new form principal
      */
     public SettingsView() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
+        
+        leerDatos();
+        dayDuration.setSize(70, 20);
+        deadline.setSize(70, 20);
+        dayDuration.setText(day);
+        deadline.setText(dead);
+        placaSettings.setText(placa);
+        cpuSettings.setText(cpu);
+        ramSettings.setText(ram);
+        fuenteSettings.setText(fuente);
+        tarjetaSettings.setText(tarjeta);
+        ensambladoresSettings.setText(ensambladores);       
+        
     }
 
     /**
@@ -28,28 +58,28 @@ public class SettingsView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         companyWorkers = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        minusPlaca = new javax.swing.JButton();
         placaSettings = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        plusPlaca = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        minusCPU = new javax.swing.JButton();
         cpuSettings = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
+        plusCPU = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        minusRAM = new javax.swing.JButton();
         ramSettings = new javax.swing.JLabel();
-        jButton14 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        plusRAM = new javax.swing.JButton();
+        minusFuente = new javax.swing.JButton();
         fuenteSettings = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
+        plusFuente = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        minusTarjeta = new javax.swing.JButton();
         tarjetaSettings = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
+        plusTarjeta = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
+        minusEnsambladores = new javax.swing.JButton();
         ensambladoresSettings = new javax.swing.JLabel();
-        jButton18 = new javax.swing.JButton();
+        plusEnsambladores = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         deadline = new javax.swing.JTextField();
@@ -78,191 +108,191 @@ public class SettingsView extends javax.swing.JFrame {
         jLabel3.setText("Placa");
         companyWorkers.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(242, 242, 242));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton1.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton1.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        minusPlaca.setBackground(new java.awt.Color(242, 242, 242));
+        minusPlaca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
+        minusPlaca.setBorderPainted(false);
+        minusPlaca.setMaximumSize(new java.awt.Dimension(40, 40));
+        minusPlaca.setMinimumSize(new java.awt.Dimension(40, 40));
+        minusPlaca.setPreferredSize(new java.awt.Dimension(25, 25));
+        minusPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                minusPlacaActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 15, -1, -1));
+        companyWorkers.add(minusPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 15, -1, -1));
 
         placaSettings.setText("0");
         companyWorkers.add(placaSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
-        jButton6.setBackground(new java.awt.Color(242, 242, 242));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
-        jButton6.setBorderPainted(false);
-        jButton6.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton6.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton6.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        plusPlaca.setBackground(new java.awt.Color(242, 242, 242));
+        plusPlaca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
+        plusPlaca.setBorderPainted(false);
+        plusPlaca.setMaximumSize(new java.awt.Dimension(40, 40));
+        plusPlaca.setMinimumSize(new java.awt.Dimension(40, 40));
+        plusPlaca.setPreferredSize(new java.awt.Dimension(25, 25));
+        plusPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                plusPlacaActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 15, -1, -1));
+        companyWorkers.add(plusPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 15, -1, -1));
 
         jLabel5.setText("CPU");
         companyWorkers.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 55, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(242, 242, 242));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-        jButton2.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton2.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton2.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        minusCPU.setBackground(new java.awt.Color(242, 242, 242));
+        minusCPU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
+        minusCPU.setBorderPainted(false);
+        minusCPU.setMaximumSize(new java.awt.Dimension(40, 40));
+        minusCPU.setMinimumSize(new java.awt.Dimension(40, 40));
+        minusCPU.setPreferredSize(new java.awt.Dimension(25, 25));
+        minusCPU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                minusCPUActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
+        companyWorkers.add(minusCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
 
         cpuSettings.setText("0");
         companyWorkers.add(cpuSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 55, -1, -1));
 
-        jButton13.setBackground(new java.awt.Color(242, 242, 242));
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
-        jButton13.setBorderPainted(false);
-        jButton13.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton13.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton13.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        plusCPU.setBackground(new java.awt.Color(242, 242, 242));
+        plusCPU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
+        plusCPU.setBorderPainted(false);
+        plusCPU.setMaximumSize(new java.awt.Dimension(40, 40));
+        plusCPU.setMinimumSize(new java.awt.Dimension(40, 40));
+        plusCPU.setPreferredSize(new java.awt.Dimension(25, 25));
+        plusCPU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                plusCPUActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
+        companyWorkers.add(plusCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
 
         jLabel6.setText("Fuente de poder");
         companyWorkers.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 125, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(242, 242, 242));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
-        jButton3.setBorderPainted(false);
-        jButton3.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton3.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton3.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        minusRAM.setBackground(new java.awt.Color(242, 242, 242));
+        minusRAM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
+        minusRAM.setBorderPainted(false);
+        minusRAM.setMaximumSize(new java.awt.Dimension(40, 40));
+        minusRAM.setMinimumSize(new java.awt.Dimension(40, 40));
+        minusRAM.setPreferredSize(new java.awt.Dimension(25, 25));
+        minusRAM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                minusRAMActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 85, -1, -1));
+        companyWorkers.add(minusRAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 85, -1, -1));
 
         ramSettings.setText("0");
         companyWorkers.add(ramSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
-        jButton14.setBackground(new java.awt.Color(242, 242, 242));
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
-        jButton14.setBorderPainted(false);
-        jButton14.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton14.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton14.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        plusRAM.setBackground(new java.awt.Color(242, 242, 242));
+        plusRAM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
+        plusRAM.setBorderPainted(false);
+        plusRAM.setMaximumSize(new java.awt.Dimension(40, 40));
+        plusRAM.setMinimumSize(new java.awt.Dimension(40, 40));
+        plusRAM.setPreferredSize(new java.awt.Dimension(25, 25));
+        plusRAM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                plusRAMActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 85, -1, -1));
+        companyWorkers.add(plusRAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 85, -1, -1));
 
-        jButton4.setBackground(new java.awt.Color(242, 242, 242));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
-        jButton4.setBorderPainted(false);
-        jButton4.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton4.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton4.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        minusFuente.setBackground(new java.awt.Color(242, 242, 242));
+        minusFuente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
+        minusFuente.setBorderPainted(false);
+        minusFuente.setMaximumSize(new java.awt.Dimension(40, 40));
+        minusFuente.setMinimumSize(new java.awt.Dimension(40, 40));
+        minusFuente.setPreferredSize(new java.awt.Dimension(25, 25));
+        minusFuente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                minusFuenteActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+        companyWorkers.add(minusFuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
 
         fuenteSettings.setText("0");
         companyWorkers.add(fuenteSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 125, -1, -1));
 
-        jButton15.setBackground(new java.awt.Color(242, 242, 242));
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
-        jButton15.setBorderPainted(false);
-        jButton15.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton15.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton15.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        plusFuente.setBackground(new java.awt.Color(242, 242, 242));
+        plusFuente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
+        plusFuente.setBorderPainted(false);
+        plusFuente.setMaximumSize(new java.awt.Dimension(40, 40));
+        plusFuente.setMinimumSize(new java.awt.Dimension(40, 40));
+        plusFuente.setPreferredSize(new java.awt.Dimension(25, 25));
+        plusFuente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                plusFuenteActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
+        companyWorkers.add(plusFuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
 
         jLabel15.setText("Tarjeta gráfica");
         companyWorkers.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
-        jButton5.setBackground(new java.awt.Color(242, 242, 242));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton5.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton5.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        minusTarjeta.setBackground(new java.awt.Color(242, 242, 242));
+        minusTarjeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
+        minusTarjeta.setBorderPainted(false);
+        minusTarjeta.setMaximumSize(new java.awt.Dimension(40, 40));
+        minusTarjeta.setMinimumSize(new java.awt.Dimension(40, 40));
+        minusTarjeta.setPreferredSize(new java.awt.Dimension(25, 25));
+        minusTarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                minusTarjetaActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 155, -1, -1));
+        companyWorkers.add(minusTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 155, -1, -1));
 
         tarjetaSettings.setText("0");
         companyWorkers.add(tarjetaSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
 
-        jButton16.setBackground(new java.awt.Color(242, 242, 242));
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
-        jButton16.setBorderPainted(false);
-        jButton16.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton16.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton16.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        plusTarjeta.setBackground(new java.awt.Color(242, 242, 242));
+        plusTarjeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
+        plusTarjeta.setBorderPainted(false);
+        plusTarjeta.setMaximumSize(new java.awt.Dimension(40, 40));
+        plusTarjeta.setMinimumSize(new java.awt.Dimension(40, 40));
+        plusTarjeta.setPreferredSize(new java.awt.Dimension(25, 25));
+        plusTarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                plusTarjetaActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 155, -1, -1));
+        companyWorkers.add(plusTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 155, -1, -1));
 
         jLabel17.setText("Ensambladores");
         companyWorkers.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 195, -1, -1));
 
-        jButton17.setBackground(new java.awt.Color(242, 242, 242));
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
-        jButton17.setBorderPainted(false);
-        jButton17.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton17.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton17.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        minusEnsambladores.setBackground(new java.awt.Color(242, 242, 242));
+        minusEnsambladores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-menos-30 (2).png"))); // NOI18N
+        minusEnsambladores.setBorderPainted(false);
+        minusEnsambladores.setMaximumSize(new java.awt.Dimension(40, 40));
+        minusEnsambladores.setMinimumSize(new java.awt.Dimension(40, 40));
+        minusEnsambladores.setPreferredSize(new java.awt.Dimension(25, 25));
+        minusEnsambladores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                minusEnsambladoresActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+        companyWorkers.add(minusEnsambladores, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
 
         ensambladoresSettings.setText("0");
         companyWorkers.add(ensambladoresSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 195, -1, -1));
 
-        jButton18.setBackground(new java.awt.Color(242, 242, 242));
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
-        jButton18.setBorderPainted(false);
-        jButton18.setMaximumSize(new java.awt.Dimension(40, 40));
-        jButton18.setMinimumSize(new java.awt.Dimension(40, 40));
-        jButton18.setPreferredSize(new java.awt.Dimension(25, 25));
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        plusEnsambladores.setBackground(new java.awt.Color(242, 242, 242));
+        plusEnsambladores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-más-30 (1).png"))); // NOI18N
+        plusEnsambladores.setBorderPainted(false);
+        plusEnsambladores.setMaximumSize(new java.awt.Dimension(40, 40));
+        plusEnsambladores.setMinimumSize(new java.awt.Dimension(40, 40));
+        plusEnsambladores.setPreferredSize(new java.awt.Dimension(25, 25));
+        plusEnsambladores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                plusEnsambladoresActionPerformed(evt);
             }
         });
-        companyWorkers.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
+        companyWorkers.add(plusEnsambladores, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
 
         jLabel10.setText("RAM");
         companyWorkers.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
@@ -274,7 +304,7 @@ public class SettingsView extends javax.swing.JFrame {
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
         deadline.setFont(new java.awt.Font("Segoe UI", 2, 8)); // NOI18N
-        deadline.setText("En días");
+        deadline.setPreferredSize(new java.awt.Dimension(70, 20));
         deadline.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deadlineActionPerformed(evt);
@@ -283,7 +313,7 @@ public class SettingsView extends javax.swing.JFrame {
         jPanel1.add(deadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
         dayDuration.setFont(new java.awt.Font("Segoe UI", 2, 8)); // NOI18N
-        dayDuration.setText("En segundos");
+        dayDuration.setPreferredSize(new java.awt.Dimension(70, 20));
         dayDuration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dayDurationActionPerformed(evt);
@@ -330,53 +360,89 @@ public class SettingsView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void minusPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusPlacaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if (Integer.parseInt(placaSettings.getText()) > 1){
+            int placaInt = Integer.parseInt(placaSettings.getText()) - 1;
+            placaSettings.setText(String.valueOf(placaInt));
+        }
+    }//GEN-LAST:event_minusPlacaActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void plusPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusPlacaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        int placaInt = Integer.parseInt(placaSettings.getText()) + 1;
+            placaSettings.setText(String.valueOf(placaInt));
+    }//GEN-LAST:event_plusPlacaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void minusCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusCPUActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        if (Integer.parseInt(cpuSettings.getText()) > 1){
+            int cpuInt = Integer.parseInt(cpuSettings.getText()) - 1;
+            cpuSettings.setText(String.valueOf(cpuInt));
+        }
+    }//GEN-LAST:event_minusCPUActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void plusCPUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusCPUActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+        int cpuInt = Integer.parseInt(cpuSettings.getText()) + 1;
+            cpuSettings.setText(String.valueOf(cpuInt));
+    }//GEN-LAST:event_plusCPUActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void minusRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusRAMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        if (Integer.parseInt(ramSettings.getText()) > 1){
+            int ramInt = Integer.parseInt(ramSettings.getText()) - 1;
+            ramSettings.setText(String.valueOf(ramInt));
+        }
+    }//GEN-LAST:event_minusRAMActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void plusRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusRAMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
+        int ramInt = Integer.parseInt(ramSettings.getText()) + 1;
+            ramSettings.setText(String.valueOf(ramInt));
+    }//GEN-LAST:event_plusRAMActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void minusFuenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusFuenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        if (Integer.parseInt(fuenteSettings.getText()) > 1){
+            int fuenteInt = Integer.parseInt(fuenteSettings.getText()) - 1;
+            fuenteSettings.setText(String.valueOf(fuenteInt));
+        }
+    }//GEN-LAST:event_minusFuenteActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void plusFuenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusFuenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+        int fuenteInt = Integer.parseInt(fuenteSettings.getText()) + 1;
+            fuenteSettings.setText(String.valueOf(fuenteInt));
+    }//GEN-LAST:event_plusFuenteActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void minusTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusTarjetaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        if (Integer.parseInt(tarjetaSettings.getText()) > 1){
+            int tarjetaInt = Integer.parseInt(tarjetaSettings.getText()) - 1;
+            tarjetaSettings.setText(String.valueOf(tarjetaInt));
+        }
+    }//GEN-LAST:event_minusTarjetaActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void plusTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusTarjetaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
+        int tarjetaInt = Integer.parseInt(tarjetaSettings.getText()) + 1;
+            tarjetaSettings.setText(String.valueOf(tarjetaInt));
+    }//GEN-LAST:event_plusTarjetaActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void minusEnsambladoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusEnsambladoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
+        if (Integer.parseInt(ensambladoresSettings.getText()) > 1){
+            int ensambladoresInt = Integer.parseInt(ensambladoresSettings.getText()) - 1;
+            ensambladoresSettings.setText(String.valueOf(ensambladoresInt));
+        }
+    }//GEN-LAST:event_minusEnsambladoresActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void plusEnsambladoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusEnsambladoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
+        int ensambladoresInt = Integer.parseInt(ensambladoresSettings.getText()) + 1;
+            ensambladoresSettings.setText(String.valueOf(ensambladoresInt));
+    }//GEN-LAST:event_plusEnsambladoresActionPerformed
 
     private void deadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deadlineActionPerformed
         // TODO add your handling code here:
@@ -388,8 +454,71 @@ public class SettingsView extends javax.swing.JFrame {
 
     private void saveChangesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveChangesActionPerformed
         // TODO add your handling code here:
+        if (dayDuration.getText() != ""){
+            day = dayDuration.getText();
+        }
+        if (deadline.getText() != ""){
+            dead = deadline.getText();
+        }
+        if (placaSettings.getText() != ""){
+            placa = placaSettings.getText();
+        }
+        if (cpuSettings.getText() != ""){
+            cpu = cpuSettings.getText();
+        }
+        if (ramSettings.getText() != ""){
+            ram = ramSettings.getText();
+        }
+        if (fuenteSettings.getText() != ""){
+            fuente = fuenteSettings.getText();
+        }
+        if (tarjetaSettings.getText() != ""){
+            tarjeta = tarjetaSettings.getText();
+        }
+        if (ensambladoresSettings.getText() != ""){
+            ensambladores = ensambladoresSettings.getText();
+        }
+        saveData();
+
+    
+        
     }//GEN-LAST:event_saveChangesActionPerformed
 
+    public void saveData() {
+        try {
+            FileWriter writer = new FileWriter("datos.txt");
+            writer.write(day + "\n");
+            writer.write(dead + "\n");
+            writer.write(placa + "\n");
+            writer.write(cpu + "\n");
+            writer.write(ram + "\n");
+            writer.write(fuente + "\n");
+            writer.write(tarjeta + "\n");
+            writer.write(ensambladores + "\n");
+            writer.close();
+            JOptionPane.showMessageDialog(null, "Archivo guardado con éxito", "Guardado exitoso", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void leerDatos() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("datos.txt"));
+            day = reader.readLine();
+            dead = reader.readLine();
+            placa = reader.readLine();
+            cpu = reader.readLine();
+            ram = reader.readLine();
+            fuente = reader.readLine();
+            tarjeta = reader.readLine();
+            ensambladores = reader.readLine();
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
         PrincipalView principalView = new PrincipalView();
@@ -443,18 +572,6 @@ public class SettingsView extends javax.swing.JFrame {
     private javax.swing.JLabel ensambladoresSettings;
     private javax.swing.JButton exit;
     private javax.swing.JLabel fuenteSettings;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel15;
@@ -468,7 +585,19 @@ public class SettingsView extends javax.swing.JFrame {
     private javax.swing.JLabel mainBackground;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel mainTitle;
+    private javax.swing.JButton minusCPU;
+    private javax.swing.JButton minusEnsambladores;
+    private javax.swing.JButton minusFuente;
+    private javax.swing.JButton minusPlaca;
+    private javax.swing.JButton minusRAM;
+    private javax.swing.JButton minusTarjeta;
     private javax.swing.JLabel placaSettings;
+    private javax.swing.JButton plusCPU;
+    private javax.swing.JButton plusEnsambladores;
+    private javax.swing.JButton plusFuente;
+    private javax.swing.JButton plusPlaca;
+    private javax.swing.JButton plusRAM;
+    private javax.swing.JButton plusTarjeta;
     private javax.swing.JLabel ramSettings;
     private javax.swing.JButton saveChanges;
     private javax.swing.JLabel tarjetaSettings;
