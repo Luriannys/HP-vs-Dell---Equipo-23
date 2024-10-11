@@ -46,7 +46,7 @@ public class Main extends Thread{
         Thread t =new Thread(pm);
         Thread t1 =new Thread(new Director(0,semaforo,0,deadline,pm,tiempo));
         Thread t2=new Thread(new Trabajadores(tiempo,30));
-        Thread t3=new Thread();
+        
         //multithread
         
         t.start();
@@ -56,14 +56,6 @@ public class Main extends Thread{
         
     }
    
-   /* public void run(){
-        System.out.println("En el Hilooo");
-       try {
-           sleep(100000000);
-       } catch (InterruptedException ex) {
-           Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-       }
-    }
-    */
+
     
 }
