@@ -59,6 +59,14 @@ public class Director extends Thread {
     public void setAccion(String accion) {
         this.accion = accion;
     }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
+    }
     
     
     

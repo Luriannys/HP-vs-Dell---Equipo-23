@@ -1,38 +1,9 @@
 package clases;
 
-
 import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-    
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-    
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-    
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-    
+   
 /**
  *
  * @author rgabr
@@ -55,6 +26,8 @@ public class Trabajadores extends Thread{
     private int almacenPCG;
     int i=0;
     private Compania compania;
+    int cantidad;
+    
 
     
 
@@ -64,7 +37,7 @@ public void run(){
     
 }
 
-public Trabajadores(int tiempo,int deadline) {
+public Trabajadores() {
     this.tiempo=tiempo;
     this.deadline=deadline;
 
@@ -183,7 +156,62 @@ public void produccion(){
 
     }
     
-
+    public void proceso(){
+        while (dias!=deadline){
+          try{      
+            System.out.println("Dia "+dias);
+            System.out.println("Los productores estan trabajando");
+            
+                Thread.sleep(Duration.ofSeconds(tiempo));
+            
+                dias++;
+                if ("HP".equals(compania.getNombre())){
+                    almacenRAM=almacenRAM+compania.getProduPlacas();
+                    almacen_Fpoder=almacen_Fpoder+compania.getProduFuentes();
+                    System.out.println("Los productores construyeron "+compania.getProduRAM()+" RAM y "+compania.getProduFuentes()+"  Fuentes de poder");
+                    pago=pago+40+34+20+26+16+50;
+                    System.out.println("PCs "+almacenPC);
+                    System.out.println("PCs graficas "+almacenPCG);
+                    if (almacenPlaca>compania.getCantidadplacas() &&almacenCPU>compania.getCantidadCPU() &&almacenRAM>compania.getCantidadRAM() && almacen_Fpoder>compania.getCantidadFuentes()){
+                    
+                    this.almacenPlaca=this.almacenPlaca-1;
+                    this.almacenCPU=this.almacenCPU-1;
+                    this.almacenRAM=this.almacenRAM-2;
+                    this.almacen_Fpoder=this.almacen_Fpoder-4;
+                    }
+                     if ((i+1)%4==0){
+                        System.out.println("Los emsambladores construyeron una Computadora con Grafica");
+                        almacenPCG=almacenPCG+1;
+                        i++;
+                        this.almacenGrafica=this.almacenGrafica-1;
+                        
+                    }else{
+                   
+                    almacenPC=almacenPC+1;
+                    i++;
+                    
+                    
+                    System.out.println("Los emsambladores construyeron una Computadora");
+                    }
+                }
+                if (i==4){
+                        i=0;
+                    }
+                                    
+                   //los que tardan 1 dia se suman y ya 
+                 
+                   if (dias%3 ==0){
+                       //se suman cada tres dias 
+                       almacenGrafica=almacenGrafica+compania.getProduTarjetas();
+                       almacenCPU=almacenCPU+1;
+                       System.out.println("Los productores construyeron 1 Grafica, 1 CPU y Placa base ");
+                   }
+                
+                } catch (InterruptedException ex) {
+                Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
     public Trabajadores(float sueldo, int tiempo_produccion, int almacen) {
         this.sueldo = sueldo;
         this.tiempo_produccion = tiempo_produccion;

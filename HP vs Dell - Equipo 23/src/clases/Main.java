@@ -36,8 +36,7 @@ public class Main extends Thread{
        
        //Iniciar interfaz
        
-       PrincipalView principalView = new PrincipalView();
-       principalView.setVisible(true);
+       
        
        
        int tiempo=48;
@@ -47,7 +46,7 @@ public class Main extends Thread{
         ProjectManager pm =new ProjectManager();
         Thread t =new Thread(pm);
         Thread t1 =new Thread(new Director(pm));
-        Thread t2=new Thread(new Trabajadores(tiempo,30));
+        Thread t2=new Thread(new Trabajadores());
         
         //multithread
         
@@ -55,6 +54,9 @@ public class Main extends Thread{
         t1.start();
         t2.start();
         System.out.println("Fuera del HIloooo");
+        
+        PrincipalView principalView = new PrincipalView();
+       principalView.setVisible(true);
         
     }
    

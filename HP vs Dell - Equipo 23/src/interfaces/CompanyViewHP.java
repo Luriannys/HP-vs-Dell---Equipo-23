@@ -1,6 +1,5 @@
 package interfaces;
 import clases.Compania;
-import clases.*;
 
 /**
  *
@@ -30,7 +29,7 @@ public class CompanyViewHP extends javax.swing.JFrame {
         
         String dead = settings.getDay();
         
-        Compania hp = new Compania("HP", 12, 2, 2, 3);
+        Compania hp = new Compania("HP", 16, 3, 3, 2, 1, 2, 4, 4, 90000, 140000);
         
         companyName.setText(hp.getNombre()); //Nombre Compania
         

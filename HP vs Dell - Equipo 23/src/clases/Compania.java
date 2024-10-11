@@ -32,11 +32,19 @@ public class Compania extends Thread {
     int storageTarjetas;
     int produEnsambladores;
     int diasEnsambladores;
+    int cantidadplacas;
+    int costoPc;
+    int cantidadCPU;
+    int cantidadRAM;
+    int cantidadFuentes;
+    int costoPcgrafica;
+    int frecuenciaGrafica;
     ProjectManager pm;
     Director director;
+    Trabajadores tb;
     
 
-    public Compania(String nombre, int cantidadTrabajadores, int diasPlacas, int diasCPU, int produRAM) {
+    public Compania(String nombre, int cantidadTrabajadores, int diasPlacas, int diasCPU, int produRAM,int cantidadCPU,int cantidadRAM, int cantidadFuentes, int frecuenciaGrafica, int costoPc, int costoPcgrafica) {
         this.nombre = nombre;
         this.cantidadTrabajadores = cantidadTrabajadores;
         this.produPlacas = 1;
@@ -58,7 +66,14 @@ public class Compania extends Thread {
         this.diasEnsambladores = 2;
         this.pm = new ProjectManager();
         this.director = new Director(pm);
-        
+        this.tb= new Trabajadores();
+        this.cantidadplacas=1;
+        this.cantidadCPU=cantidadCPU;
+        this.cantidadRAM=cantidadRAM;
+        this.cantidadFuentes=cantidadFuentes;
+        this.frecuenciaGrafica=frecuenciaGrafica;
+        this.costoPc = costoPc;
+        this.costoPcgrafica = costoPcgrafica;
     }
 
     public float getGanancias() {
@@ -252,6 +267,63 @@ public class Compania extends Thread {
     public void setDirector(Director director) {
         this.director = director;
     }
+
+    public int getCantidadplacas() {
+        return cantidadplacas;
+    }
+
+    public void setCantidadplacas(int cantidadplacas) {
+        this.cantidadplacas = cantidadplacas;
+    }
+
+    public int getCostoPc() {
+        return costoPc;
+    }
+
+    public void setCostoPc(int costoPc) {
+        this.costoPc = costoPc;
+    }
+
+    public int getCantidadCPU() {
+        return cantidadCPU;
+    }
+
+    public void setCantidadCPU(int cantidadCPU) {
+        this.cantidadCPU = cantidadCPU;
+    }
+
+    public int getCantidadRAM() {
+        return cantidadRAM;
+    }
+
+    public void setCantidadRAM(int cantidadRAM) {
+        this.cantidadRAM = cantidadRAM;
+    }
+
+    public int getCantidadFuentes() {
+        return cantidadFuentes;
+    }
+
+    public void setCantidadFuentes(int cantidadFuentes) {
+        this.cantidadFuentes = cantidadFuentes;
+    }
+
+    public int getCostoPcgrafica() {
+        return costoPcgrafica;
+    }
+
+    public void setCostoPcgrafica(int costoPcgrafica) {
+        this.costoPcgrafica = costoPcgrafica;
+    }
+
+    public Trabajadores getTb() {
+        return tb;
+    }
+
+    public void setTb(Trabajadores tb) {
+        this.tb = tb;
+    }
+    
     
    
     

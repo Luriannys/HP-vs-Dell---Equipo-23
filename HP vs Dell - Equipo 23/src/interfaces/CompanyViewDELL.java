@@ -1,6 +1,5 @@
 package interfaces;
 import clases.Compania;
-import clases.*;
 
 /**
  *
@@ -21,10 +20,6 @@ public class CompanyViewDELL extends javax.swing.JFrame {
         
         SettingsView settings = new SettingsView();
         
-        CompanyViewHP companyHP = new CompanyViewHP();
-        Compania hp = new Compania("HP", 16, 3, 3, 2);
-        companyHP.setCompany(hp);
-        companyHP.setVisible(true);
         placaNumber.setText(settings.getPlaca());
         cpuNumber.setText(settings.getCpu());
         ramNumber.setText(settings.getRam());
@@ -34,18 +29,18 @@ public class CompanyViewDELL extends javax.swing.JFrame {
         
         String dead = settings.getDay();
         
-        Compania dell = new Compania("DELL", 12, 2, 2, 3);
+        Compania dell = new Compania("DELL", 12, 2, 2, 3, 5, 6, 5, 5, 80000, 120000);
         
-        companyName.setText(dell.getNombre());
+        companyName.setText(dell.getNombre()); //Nombre Compania
         
-        //Estatus Almacen
+        // Status Almacen
         placaStorage.setText("0"+"/"+ dell.getStoragePlacas());
         cpuStorage.setText("0"+"/"+ dell.getStorageCPU());
         ramStorage.setText("0"+"/"+ dell.getStorageRAM());
         fuenteStorage.setText("0"+"/"+ dell.getStorageFuentes());
         tarjetaStorage.setText("0"+"/"+ dell.getStorageTarjetas());
         
-        // Estatus Compania
+        //StatusCompania
         profits.setText("GANANCIAS: $" + dell.getGanancias());
         costs.setText("COSTOS: $" + dell.getCostos());
         utility.setText("UTILIDAD: $" + dell.getUtilidad());
@@ -59,8 +54,7 @@ public class CompanyViewDELL extends javax.swing.JFrame {
         
         // Dias de entrega
         deadlineLabel.setText("DÍAS DE ENTREGA: " + (Integer.parseInt(settings.getDead()) - dell.getDirector().getDias()));
-        
-        
+   
     }
 
     public Compania getCompany() {
