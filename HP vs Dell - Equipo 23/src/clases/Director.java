@@ -33,6 +33,7 @@ public class Director extends Thread {
     ProjectManager pm;
     int faltas;
     int tiempo;
+    String accion;
 
     public Director(ProjectManager pm) {
         this.semaphore = new Semaphore(5);
@@ -54,6 +55,7 @@ public class Director extends Thread {
         while (dias!=deadline){
             revision = (int)(Math.random()*24+1);
             System.out.println("El "+ this.trabajo +" comienza a trabajar ");
+            accion="El Director esta trabajando";
             System.out.println("El Director revisara al Project Manager a la hora "+revision);
             
               
@@ -62,6 +64,7 @@ public class Director extends Thread {
                //pm falta +1 y pago-100 
                Thread.sleep(Duration.ofSeconds(tiempo));
                System.out.println("EL Director atrapo al Project Manager viendo anime");
+               accion="El Director atrapo al Project Manager viendo anime ";
                faltas = faltas+1;
                System.out.println("Faltas "+faltas);//no sirve :(
                dias++;
